@@ -1,0 +1,168 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ocean: var(--ocean);
+  --color-ocean-foreground: var(--ocean-foreground);
+  --color-lagoon: var(--lagoon);
+  --color-sand: var(--sand);
+  --color-coral: var(--coral);
+  --color-deep: var(--deep);
+  --color-footer: var(--footer);
+  --color-sun: var(--sun);
+  --color-plant: var(--plant);
+  --color-wood: var(--wood);
+  --font-sans: var(--font-dm-sans);
+  --font-heading: var(--font-newsreader);
+  --font-serif: var(--font-newsreader);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #fffdf8;
+  --foreground: #103b45;
+  --card: #ffffff;
+  --card-foreground: #103b45;
+  --popover: #fffdf8;
+  --popover-foreground: #103b45;
+  --primary: #f16954;
+  --primary-hover: #c94b39;
+  --primary-foreground: #ffffff;
+  --secondary: #dff7f3;
+  --secondary-foreground: #082f38;
+  --muted: #fbf6e8;
+  --muted-foreground: #587177;
+  --accent: #7edbd0;
+  --accent-foreground: #082f38;
+  --destructive: #a62f24;
+  --border: #bfd9d6;
+  --input: #a8c2c0;
+  --ring: #006f78;
+  --ocean: #006f78;
+  --ocean-foreground: #ffffff;
+  --lagoon: #7edbd0;
+  --sand: #fbf6e8;
+  --coral: #f16954;
+  --deep: #082f38;
+  --footer: #06262d;
+  --sun: #f4c66a;
+  --plant: #0a5a54;
+  --wood: #814f33;
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    @apply bg-lagoon text-foreground;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.16em] text-ocean uppercase;
+  }
+
+  .display-title {
+    @apply font-heading font-medium tracking-[-0.035em] text-balance;
+  }
+
+  .hero-atmosphere {
+    background:
+      radial-gradient(circle at 78% 10%, color-mix(in srgb, var(--lagoon) 55%, transparent), transparent 28rem),
+      var(--secondary);
+  }
+
+  .hero-rings {
+    box-shadow:
+      0 0 0 3.5rem rgb(255 255 255 / 0.16),
+      0 0 0 7rem rgb(255 255 255 / 0.12);
+  }
+
+  .arch-sky {
+    background: linear-gradient(180deg, var(--ocean) 0%, #15858d 62%, #72cabe 100%);
+  }
+
+  .hero-card-shadow {
+    box-shadow: 0 1.5rem 4rem rgb(8 47 56 / 0.13);
+  }
+
+  .registration-card {
+    @apply min-h-[36rem];
+    box-shadow: 0 1.5rem 4rem rgb(8 47 56 / 0.13);
+  }
+
+  .registration-form [data-slot="field-label"] {
+    @apply text-[0.78rem] font-bold text-foreground;
+  }
+
+  .registration-form [data-slot="field-label"] span {
+    @apply text-primary-hover;
+  }
+
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

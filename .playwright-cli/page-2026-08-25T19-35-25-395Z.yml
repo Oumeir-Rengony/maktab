@@ -1,0 +1,606 @@
+- generic [ref=e1]:
+  - link [ref=e229] [cursor=pointer]:
+    - /url: "#main"
+    - text: Skip to main content
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link [ref=e230] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=e9]: Maktab.mu
+      - navigation [ref=e231]:
+        - link [ref=e232] [cursor=pointer]:
+          - /url: "#why"
+          - text: Why Maktab
+        - link [ref=e233] [cursor=pointer]:
+          - /url: "#premises"
+          - text: On premises
+        - link [ref=e234] [cursor=pointer]:
+          - /url: "#registration"
+          - text: Online
+        - button [ref=e235] [cursor=pointer]: Register now
+  - main [ref=e15]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: Qur'an & Islamic learning in Mauritius
+        - heading [level=1] [ref=e236]: A beautiful beginning that lasts a lifetime.
+        - paragraph [ref=e22]: Support your child's journey with caring teachers, thoughtful lessons and a community rooted in faith.
+        - generic [ref=e23]:
+          - button [ref=e237] [cursor=pointer]: Start online registration
+          - link [ref=e238] [cursor=pointer]:
+            - /url: "#premises"
+            - text: Find a nearby maktab
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]: م
+            - generic [ref=e29]: ق
+            - generic [ref=e30]: ر
+          - paragraph [ref=e31]:
+            - strong [ref=e32]: Welcoming every learner
+            - text: Beginners and returning students
+      - generic [ref=e239]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Today's lesson
+          - strong [ref=e42]: Surah Al-Fātiḥah
+          - generic [ref=e43]: Read · Understand · Remember
+        - generic [ref=e51]:
+          - paragraph [ref=e52]: اِقْرَأْ
+          - paragraph [ref=e53]: Read — the first invitation
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: More than lessons
+          - heading [level=2] [ref=e241]: Give their heart a place to grow.
+        - paragraph [ref=e59]: Maktab is where knowledge becomes character. Each class creates space to ask, practise and belong—at a pace that feels encouraging.
+      - generic [ref=e60]:
+        - article [ref=e61]:
+          - generic [ref=e66]:
+            - heading [level=3] [ref=e242]: Faith with understanding
+            - paragraph [ref=e68]: Learn to read the Qur'an with care while discovering the meaning and values behind each lesson.
+        - article [ref=e69]:
+          - generic [ref=e73]:
+            - heading [level=3] [ref=e243]: A steady learning rhythm
+            - paragraph [ref=e75]: Clear milestones and regular guidance help students build confidence without feeling rushed.
+        - article [ref=e76]:
+          - generic [ref=e82]:
+            - heading [level=3] [ref=e244]: Teachers who know their students
+            - paragraph [ref=e84]: Patient guidance and small-group attention make it easier for every learner to progress.
+      - blockquote [ref=e85]:
+        - paragraph [ref=e86]: “The best among you are those who learn the Qur'an and teach it.”
+        - generic [ref=e87]: Sahih al-Bukhari
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - paragraph [ref=e92]: Learn together
+          - heading [level=2] [ref=e245]: On-premises classes
+        - paragraph [ref=e94]: Speak directly with the local imaam to ask about schedules, age groups and available places.
+      - table [ref=e246]:
+        - caption [ref=e97]: On-premises classes
+        - rowgroup [ref=e98]:
+          - row [ref=e247]:
+            - columnheader [ref=e248]: Imaam
+            - columnheader [ref=e249]: Location
+            - columnheader [ref=e250]: Contact
+            - columnheader [ref=e251]: Call
+        - rowgroup [ref=e104]:
+          - row [ref=e252]:
+            - cell [ref=e253]: Imaam Abdool Rahman
+            - cell [ref=e254]: Port Louis
+            - cell [ref=e255]: +230 5900 1234
+            - cell [ref=e256]:
+              - link [ref=e257] [cursor=pointer]:
+                - /url: tel:+23059001234
+                - text: Call
+                - generic [ref=e111]: ↗
+          - row [ref=e258]:
+            - cell [ref=e259]: Imaam Yusuf Jeewa
+            - cell [ref=e260]: Curepipe
+            - cell [ref=e261]: +230 5900 2345
+            - cell [ref=e262]:
+              - link [ref=e263] [cursor=pointer]:
+                - /url: tel:+23059002345
+                - text: Call
+                - generic [ref=e118]: ↗
+          - row [ref=e264]:
+            - cell [ref=e265]: Imaam Ismail Hossen
+            - cell [ref=e266]: Rose Hill
+            - cell [ref=e267]: +230 5900 3456
+            - cell [ref=e268]:
+              - link [ref=e269] [cursor=pointer]:
+                - /url: tel:+23059003456
+                - text: Call
+                - generic [ref=e125]: ↗
+          - row [ref=e270]:
+            - cell [ref=e271]: Imaam Bilal Ahmad
+            - cell [ref=e272]: Flacq
+            - cell [ref=e273]: +230 5900 4567
+            - cell [ref=e274]:
+              - link [ref=e275] [cursor=pointer]:
+                - /url: tel:+23059004567
+                - text: Call
+                - generic [ref=e132]: ↗
+      - generic [ref=e133]:
+        - paragraph [ref=e134]:
+          - strong [ref=e135]: There are 48 more madrassahs to explore
+          - text: Browse all 52 locations across Mauritius and find the one nearest to you.
+        - button [expanded] [ref=e276] [cursor=pointer]: View all 52 madrassahs
+      - paragraph [ref=e137]: Contact details shown are sample content for this website draft.
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - paragraph [ref=e141]: Learn from home
+        - heading [level=2] [ref=e277]: Online registration
+        - paragraph [ref=e143]: Tell us a little about the student. We’ll use these details to recommend the most suitable course and level.
+        - paragraph [ref=e147]:
+          - strong [ref=e148]: Need help?
+          - text: Call us on
+          - link [ref=e278] [cursor=pointer]:
+            - /url: tel:+23059000000
+            - text: +230 5900 0000
+      - generic [ref=e150]:
+        - list [ref=e279]:
+          - listitem [ref=e153]:
+            - generic [ref=e154]: "1"
+            - generic [ref=e155]:
+              - strong [ref=e156]: Student details
+              - text: About the learner
+          - listitem [ref=e157]
+          - listitem [ref=e158]:
+            - generic [ref=e159]: "2"
+            - generic [ref=e160]:
+              - strong [ref=e161]: Learning history
+              - text: Previous study
+        - group [ref=e280]:
+          - generic [ref=e165]: Student details
+          - paragraph [ref=e166]: Fields marked with * are required.
+          - generic [ref=e167]:
+            - group [ref=e168]:
+              - generic [ref=e169]:
+                - text: Course
+                - generic [ref=e170]: "*"
+              - combobox [ref=e281] [cursor=pointer]:
+                - generic [ref=e172]: Choose a course
+                - img: ▼
+              - textbox [ref=e173]
+            - generic [ref=e174]:
+              - group [ref=e175]:
+                - generic [ref=e176]:
+                  - text: Student name
+                  - generic [ref=e177]: "*"
+                - textbox [ref=e282]
+              - group [ref=e179]:
+                - generic [ref=e180]:
+                  - text: Age
+                  - generic [ref=e181]: "*"
+                - spinbutton [ref=e283]
+              - group [ref=e183]:
+                - generic [ref=e184]:
+                  - text: Responsible party name
+                  - generic [ref=e185]: "*"
+                - textbox [ref=e284]
+              - group [ref=e187]:
+                - generic [ref=e188]:
+                  - text: Responsible party email
+                  - generic [ref=e189]: "*"
+                - textbox [ref=e285]:
+                  - /placeholder: name@example.com
+              - group [ref=e191]:
+                - generic [ref=e192]:
+                  - text: Relationship with student
+                  - generic [ref=e193]: "*"
+                - combobox [ref=e286] [cursor=pointer]:
+                  - generic [ref=e195]: Choose relationship
+                  - img: ▼
+                - textbox [ref=e196]
+              - group [ref=e197]:
+                - generic [ref=e198]:
+                  - text: Residence
+                  - generic [ref=e199]: "*"
+                - textbox [ref=e287]:
+                  - /placeholder: Town or district
+          - button [ref=e288] [cursor=pointer]: Continue to next step
+  - contentinfo [ref=e203]:
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - link [ref=e289] [cursor=pointer]:
+          - /url: "#top"
+          - generic [ref=e210]: Maktab.mu
+        - paragraph [ref=e211]: Faith. Knowledge. Character. A welcoming place to learn and grow.
+        - navigation [ref=e290]:
+          - link [ref=e291] [cursor=pointer]:
+            - /url: "#why"
+            - text: Why Maktab
+          - link [ref=e292] [cursor=pointer]:
+            - /url: "#premises"
+            - text: On premises
+          - link [ref=e293] [cursor=pointer]:
+            - /url: "#registration"
+            - text: Online registration
+      - generic [ref=e216]:
+        - paragraph [ref=e217]: © 2026 Maktab.mu
+        - paragraph [ref=e218]: Made with care in Mauritius 🇲🇺
+  - button "Open Next.js Dev Tools" [ref=e224] [cursor=pointer]
+  - alert [ref=e228]
+  - dialog [ref=e297]:
+    - generic [ref=e298]:
+      - paragraph [ref=e299]: All on-premises classes
+      - heading "Find your madrassah" [level=2] [ref=e300]
+      - paragraph [ref=e301]: Search the complete directory by imaam or location.
+    - generic [ref=e302]:
+      - group [ref=e303]:
+        - generic [ref=e304]: Search by imaam or location
+        - searchbox "Search by imaam or location" [active] [ref=e306]
+      - status [ref=e307]: 52 madrassahs
+    - generic [ref=e308]:
+      - generic [ref=e309]:
+        - generic [ref=e310]: Imaam
+        - generic [ref=e311]: Location
+        - generic [ref=e312]: Contact
+        - generic [ref=e313]: Call
+      - list [ref=e314]:
+        - listitem [ref=e315]:
+          - strong [ref=e316]: Imaam Abdool Rahman
+          - generic [ref=e317]: Port Louis
+          - generic [ref=e318]: +230 5900 1234
+          - link "Call Imaam Abdool Rahman in Port Louis" [ref=e320] [cursor=pointer]:
+            - /url: tel:+23059001234
+            - generic [ref=e323]: ↗
+        - listitem [ref=e324]:
+          - strong [ref=e325]: Imaam Yusuf Jeewa
+          - generic [ref=e326]: Curepipe
+          - generic [ref=e327]: +230 5900 2345
+          - link "Call Imaam Yusuf Jeewa in Curepipe" [ref=e329] [cursor=pointer]:
+            - /url: tel:+23059002345
+            - generic [ref=e332]: ↗
+        - listitem [ref=e333]:
+          - strong [ref=e334]: Imaam Ismail Hossen
+          - generic [ref=e335]: Rose Hill
+          - generic [ref=e336]: +230 5900 3456
+          - link "Call Imaam Ismail Hossen in Rose Hill" [ref=e338] [cursor=pointer]:
+            - /url: tel:+23059003456
+            - generic [ref=e341]: ↗
+        - listitem [ref=e342]:
+          - strong [ref=e343]: Imaam Bilal Ahmad
+          - generic [ref=e344]: Flacq
+          - generic [ref=e345]: +230 5900 4567
+          - link "Call Imaam Bilal Ahmad in Flacq" [ref=e347] [cursor=pointer]:
+            - /url: tel:+23059004567
+            - generic [ref=e350]: ↗
+        - listitem [ref=e351]:
+          - strong [ref=e352]: Imaam Zayd Hossen
+          - generic [ref=e353]: Quatre Bornes
+          - generic [ref=e354]: +230 5900 5005
+          - link "Call Imaam Zayd Hossen in Quatre Bornes" [ref=e356] [cursor=pointer]:
+            - /url: tel:+23059005005
+            - generic [ref=e359]: ↗
+        - listitem [ref=e360]:
+          - strong [ref=e361]: Imaam Farooq Ameer
+          - generic [ref=e362]: Beau Bassin
+          - generic [ref=e363]: +230 5900 5006
+          - link "Call Imaam Farooq Ameer in Beau Bassin" [ref=e365] [cursor=pointer]:
+            - /url: tel:+23059005006
+            - generic [ref=e368]: ↗
+        - listitem [ref=e369]:
+          - strong [ref=e370]: Imaam Hamza Patel
+          - generic [ref=e371]: Vacoas
+          - generic [ref=e372]: +230 5900 5007
+          - link "Call Imaam Hamza Patel in Vacoas" [ref=e374] [cursor=pointer]:
+            - /url: tel:+23059005007
+            - generic [ref=e377]: ↗
+        - listitem [ref=e378]:
+          - strong [ref=e379]: Imaam Hasan Elahee
+          - generic [ref=e380]: Phoenix
+          - generic [ref=e381]: +230 5900 5008
+          - link "Call Imaam Hasan Elahee in Phoenix" [ref=e383] [cursor=pointer]:
+            - /url: tel:+23059005008
+            - generic [ref=e386]: ↗
+        - listitem [ref=e387]:
+          - strong [ref=e388]: Imaam Umar Chuttoo
+          - generic [ref=e389]: Goodlands
+          - generic [ref=e390]: +230 5900 5009
+          - link "Call Imaam Umar Chuttoo in Goodlands" [ref=e392] [cursor=pointer]:
+            - /url: tel:+23059005009
+            - generic [ref=e395]: ↗
+        - listitem [ref=e396]:
+          - strong [ref=e397]: Imaam Rashid Timol
+          - generic [ref=e398]: Triolet
+          - generic [ref=e399]: +230 5900 5010
+          - link "Call Imaam Rashid Timol in Triolet" [ref=e401] [cursor=pointer]:
+            - /url: tel:+23059005010
+            - generic [ref=e404]: ↗
+        - listitem [ref=e405]:
+          - strong [ref=e406]: Imaam Zakariyya Mowlabaccus
+          - generic [ref=e407]: Pamplemousses
+          - generic [ref=e408]: +230 5900 5011
+          - link "Call Imaam Zakariyya Mowlabaccus in Pamplemousses" [ref=e410] [cursor=pointer]:
+            - /url: tel:+23059005011
+            - generic [ref=e413]: ↗
+        - listitem [ref=e414]:
+          - strong [ref=e415]: Imaam Imran Oozeer
+          - generic [ref=e416]: Rivière du Rempart
+          - generic [ref=e417]: +230 5900 5012
+          - link "Call Imaam Imran Oozeer in Rivière du Rempart" [ref=e419] [cursor=pointer]:
+            - /url: tel:+23059005012
+            - generic [ref=e422]: ↗
+        - listitem [ref=e423]:
+          - strong [ref=e424]: Imaam Suleiman Joomun
+          - generic [ref=e425]: Mahébourg
+          - generic [ref=e426]: +230 5900 5013
+          - link "Call Imaam Suleiman Joomun in Mahébourg" [ref=e428] [cursor=pointer]:
+            - /url: tel:+23059005013
+            - generic [ref=e431]: ↗
+        - listitem [ref=e432]:
+          - strong [ref=e433]: Imaam Ali Khodabocus
+          - generic [ref=e434]: Plaine Magnien
+          - generic [ref=e435]: +230 5900 5014
+          - link "Call Imaam Ali Khodabocus in Plaine Magnien" [ref=e437] [cursor=pointer]:
+            - /url: tel:+23059005014
+            - generic [ref=e440]: ↗
+        - listitem [ref=e441]:
+          - strong [ref=e442]: Imaam Salman Dookhun
+          - generic [ref=e443]: L’Escalier
+          - generic [ref=e444]: +230 5900 5015
+          - link "Call Imaam Salman Dookhun in L’Escalier" [ref=e446] [cursor=pointer]:
+            - /url: tel:+23059005015
+            - generic [ref=e449]: ↗
+        - listitem [ref=e450]:
+          - strong [ref=e451]: Imaam Yahya Mamode
+          - generic [ref=e452]: Souillac
+          - generic [ref=e453]: +230 5900 5016
+          - link "Call Imaam Yahya Mamode in Souillac" [ref=e455] [cursor=pointer]:
+            - /url: tel:+23059005016
+            - generic [ref=e458]: ↗
+        - listitem [ref=e459]:
+          - strong [ref=e460]: Imaam Idris Dinally
+          - generic [ref=e461]: Chemin Grenier
+          - generic [ref=e462]: +230 5900 5017
+          - link "Call Imaam Idris Dinally in Chemin Grenier" [ref=e464] [cursor=pointer]:
+            - /url: tel:+23059005017
+            - generic [ref=e467]: ↗
+        - listitem [ref=e468]:
+          - strong [ref=e469]: Imaam Khalid Peerbux
+          - generic [ref=e470]: Rivière Noire
+          - generic [ref=e471]: +230 5900 5018
+          - link "Call Imaam Khalid Peerbux in Rivière Noire" [ref=e473] [cursor=pointer]:
+            - /url: tel:+23059005018
+            - generic [ref=e476]: ↗
+        - listitem [ref=e477]:
+          - strong [ref=e478]: Imaam Talha Aumeer
+          - generic [ref=e479]: Bambous
+          - generic [ref=e480]: +230 5900 5019
+          - link "Call Imaam Talha Aumeer in Bambous" [ref=e482] [cursor=pointer]:
+            - /url: tel:+23059005019
+            - generic [ref=e485]: ↗
+        - listitem [ref=e486]:
+          - strong [ref=e487]: Imaam Dawood Ruhomally
+          - generic [ref=e488]: Flic-en-Flac
+          - generic [ref=e489]: +230 5900 5020
+          - link "Call Imaam Dawood Ruhomally in Flic-en-Flac" [ref=e491] [cursor=pointer]:
+            - /url: tel:+23059005020
+            - generic [ref=e494]: ↗
+        - listitem [ref=e495]:
+          - strong [ref=e496]: Imaam Nadeem Goolam
+          - generic [ref=e497]: Tamarin
+          - generic [ref=e498]: +230 5900 5021
+          - link "Call Imaam Nadeem Goolam in Tamarin" [ref=e500] [cursor=pointer]:
+            - /url: tel:+23059005021
+            - generic [ref=e503]: ↗
+        - listitem [ref=e504]:
+          - strong [ref=e505]: Imaam Munir Curumjee
+          - generic [ref=e506]: Moka
+          - generic [ref=e507]: +230 5900 5022
+          - link "Call Imaam Munir Curumjee in Moka" [ref=e509] [cursor=pointer]:
+            - /url: tel:+23059005022
+            - generic [ref=e512]: ↗
+        - listitem [ref=e513]:
+          - strong [ref=e514]: Imaam Irshad Mungur
+          - generic [ref=e515]: Saint Pierre
+          - generic [ref=e516]: +230 5900 5023
+          - link "Call Imaam Irshad Mungur in Saint Pierre" [ref=e518] [cursor=pointer]:
+            - /url: tel:+23059005023
+            - generic [ref=e521]: ↗
+        - listitem [ref=e522]:
+          - strong [ref=e523]: Imaam Ayyub Ganoo
+          - generic [ref=e524]: Quartier Militaire
+          - generic [ref=e525]: +230 5900 5024
+          - link "Call Imaam Ayyub Ganoo in Quartier Militaire" [ref=e527] [cursor=pointer]:
+            - /url: tel:+23059005024
+            - generic [ref=e530]: ↗
+        - listitem [ref=e531]:
+          - strong [ref=e532]: Imaam Haroon Kalla
+          - generic [ref=e533]: Centre de Flacq
+          - generic [ref=e534]: +230 5900 5025
+          - link "Call Imaam Haroon Kalla in Centre de Flacq" [ref=e536] [cursor=pointer]:
+            - /url: tel:+23059005025
+            - generic [ref=e539]: ↗
+        - listitem [ref=e540]:
+          - strong [ref=e541]: Imaam Faisal Jhugroo
+          - generic [ref=e542]: Bel Air
+          - generic [ref=e543]: +230 5900 5026
+          - link "Call Imaam Faisal Jhugroo in Bel Air" [ref=e545] [cursor=pointer]:
+            - /url: tel:+23059005026
+            - generic [ref=e548]: ↗
+        - listitem [ref=e549]:
+          - strong: Imaam Huzaifa Boodhoo
+          - generic [ref=e550]: Trou d’Eau Douce
+          - generic [ref=e551]: +230 5900 5027
+          - link "Call Imaam Huzaifa Boodhoo in Trou d’Eau Douce" [ref=e553] [cursor=pointer]:
+            - /url: tel:+23059005027
+            - generic [ref=e556]: ↗
+        - listitem [ref=e557]:
+          - strong: Imaam Luqman Mohamad
+          - generic [ref=e558]: Grand Baie
+          - generic [ref=e559]: +230 5900 5028
+          - link "Call Imaam Luqman Mohamad in Grand Baie" [ref=e561] [cursor=pointer]:
+            - /url: tel:+23059005028
+            - generic [ref=e564]: ↗
+        - listitem [ref=e565]:
+          - strong: Imaam Abbas Gooljar
+          - generic [ref=e566]: Pereybère
+          - generic [ref=e567]: +230 5900 5029
+          - link "Call Imaam Abbas Gooljar in Pereybère" [ref=e569] [cursor=pointer]:
+            - /url: tel:+23059005029
+            - generic [ref=e572]: ↗
+        - listitem [ref=e573]:
+          - strong: Imaam Mustafa Carim
+          - generic [ref=e574]: Mont Choisy
+          - generic [ref=e575]: +230 5900 5030
+          - link "Call Imaam Mustafa Carim in Mont Choisy" [ref=e577] [cursor=pointer]:
+            - /url: tel:+23059005030
+            - generic [ref=e580]: ↗
+        - listitem [ref=e581]:
+          - strong: Imaam Ehsan Bhye
+          - generic [ref=e582]: Mapou
+          - generic [ref=e583]: +230 5900 5031
+          - link "Call Imaam Ehsan Bhye in Mapou" [ref=e585] [cursor=pointer]:
+            - /url: tel:+23059005031
+            - generic [ref=e588]: ↗
+        - listitem [ref=e589]:
+          - strong: Imaam Adil Motala
+          - generic [ref=e590]: Terre Rouge
+          - generic [ref=e591]: +230 5900 5032
+          - link "Call Imaam Adil Motala in Terre Rouge" [ref=e593] [cursor=pointer]:
+            - /url: tel:+23059005032
+            - generic [ref=e596]: ↗
+        - listitem [ref=e597]:
+          - strong: Imaam Shuaib Peerally
+          - generic [ref=e598]: Plaine Verte
+          - generic [ref=e599]: +230 5900 5033
+          - link "Call Imaam Shuaib Peerally in Plaine Verte" [ref=e601] [cursor=pointer]:
+            - /url: tel:+23059005033
+            - generic [ref=e604]: ↗
+        - listitem [ref=e605]:
+          - strong: Imaam Junaid Mungroo
+          - generic [ref=e606]: Vallée Pitot
+          - generic [ref=e607]: +230 5900 5034
+          - link "Call Imaam Junaid Mungroo in Vallée Pitot" [ref=e609] [cursor=pointer]:
+            - /url: tel:+23059005034
+            - generic [ref=e612]: ↗
+        - listitem [ref=e613]:
+          - strong: Imaam Sameer Darsot
+          - generic [ref=e614]: Roche Bois
+          - generic [ref=e615]: +230 5900 5035
+          - link "Call Imaam Sameer Darsot in Roche Bois" [ref=e617] [cursor=pointer]:
+            - /url: tel:+23059005035
+            - generic [ref=e620]: ↗
+        - listitem [ref=e621]:
+          - strong: Imaam Hamid Busawon
+          - generic [ref=e622]: Pailles
+          - generic [ref=e623]: +230 5900 5036
+          - link "Call Imaam Hamid Busawon in Pailles" [ref=e625] [cursor=pointer]:
+            - /url: tel:+23059005036
+            - generic [ref=e628]: ↗
+        - listitem [ref=e629]:
+          - strong: Imaam Riyaaz Hossen
+          - generic [ref=e630]: Coromandel
+          - generic [ref=e631]: +230 5900 5037
+          - link "Call Imaam Riyaaz Hossen in Coromandel" [ref=e633] [cursor=pointer]:
+            - /url: tel:+23059005037
+            - generic [ref=e636]: ↗
+        - listitem [ref=e637]:
+          - strong: Imaam Ilyas Seedat
+          - generic [ref=e638]: Albion
+          - generic [ref=e639]: +230 5900 5038
+          - link "Call Imaam Ilyas Seedat in Albion" [ref=e641] [cursor=pointer]:
+            - /url: tel:+23059005038
+            - generic [ref=e644]: ↗
+        - listitem [ref=e645]:
+          - strong: Imaam Saeed Dindoyal
+          - generic [ref=e646]: La Gaulette
+          - generic [ref=e647]: +230 5900 5039
+          - link "Call Imaam Saeed Dindoyal in La Gaulette" [ref=e649] [cursor=pointer]:
+            - /url: tel:+23059005039
+            - generic [ref=e652]: ↗
+        - listitem [ref=e653]:
+          - strong: Imaam Naeem Mall
+          - generic [ref=e654]: Midlands
+          - generic [ref=e655]: +230 5900 5040
+          - link "Call Imaam Naeem Mall in Midlands" [ref=e657] [cursor=pointer]:
+            - /url: tel:+23059005040
+            - generic [ref=e660]: ↗
+        - listitem [ref=e661]:
+          - strong: Imaam Anas Mamode
+          - generic [ref=e662]: Forest Side
+          - generic [ref=e663]: +230 5900 5041
+          - link "Call Imaam Anas Mamode in Forest Side" [ref=e665] [cursor=pointer]:
+            - /url: tel:+23059005041
+            - generic [ref=e668]: ↗
+        - listitem [ref=e669]:
+          - strong: Imaam Waseem Ameer
+          - generic [ref=e670]: Eau Coulée
+          - generic [ref=e671]: +230 5900 5042
+          - link "Call Imaam Waseem Ameer in Eau Coulée" [ref=e673] [cursor=pointer]:
+            - /url: tel:+23059005042
+            - generic [ref=e676]: ↗
+        - listitem [ref=e677]:
+          - strong: Imaam Yusuf Rawat
+          - generic [ref=e678]: La Caverne
+          - generic [ref=e679]: +230 5900 5043
+          - link "Call Imaam Yusuf Rawat in La Caverne" [ref=e681] [cursor=pointer]:
+            - /url: tel:+23059005043
+            - generic [ref=e684]: ↗
+        - listitem [ref=e685]:
+          - strong: Imaam Tariq Patel
+          - generic [ref=e686]: Nouvelle France
+          - generic [ref=e687]: +230 5900 5044
+          - link "Call Imaam Tariq Patel in Nouvelle France" [ref=e689] [cursor=pointer]:
+            - /url: tel:+23059005044
+            - generic [ref=e692]: ↗
+        - listitem [ref=e693]:
+          - strong: Imaam Abdullah Mookadam
+          - generic [ref=e694]: Rose Belle
+          - generic [ref=e695]: +230 5900 5045
+          - link "Call Imaam Abdullah Mookadam in Rose Belle" [ref=e697] [cursor=pointer]:
+            - /url: tel:+23059005045
+            - generic [ref=e700]: ↗
+        - listitem [ref=e701]:
+          - strong: Imaam Ameen Goolab
+          - generic [ref=e702]: New Grove
+          - generic [ref=e703]: +230 5900 5046
+          - link "Call Imaam Ameen Goolab in New Grove" [ref=e705] [cursor=pointer]:
+            - /url: tel:+23059005046
+            - generic [ref=e708]: ↗
+        - listitem [ref=e709]:
+          - strong: Imaam Musab Dossa
+          - generic [ref=e710]: Grand Port
+          - generic [ref=e711]: +230 5900 5047
+          - link "Call Imaam Musab Dossa in Grand Port" [ref=e713] [cursor=pointer]:
+            - /url: tel:+23059005047
+            - generic [ref=e716]: ↗
+        - listitem [ref=e717]:
+          - strong: Imaam Rayyan Kadwa
+          - generic [ref=e718]: Blue Bay
+          - generic [ref=e719]: +230 5900 5048
+          - link "Call Imaam Rayyan Kadwa in Blue Bay" [ref=e721] [cursor=pointer]:
+            - /url: tel:+23059005048
+            - generic [ref=e724]: ↗
+        - listitem [ref=e725]:
+          - strong: Imaam Adam Sobdar
+          - generic [ref=e726]: Camp de Masque
+          - generic [ref=e727]: +230 5900 5049
+          - link "Call Imaam Adam Sobdar in Camp de Masque" [ref=e729] [cursor=pointer]:
+            - /url: tel:+23059005049
+            - generic [ref=e732]: ↗
+        - listitem [ref=e733]:
+          - strong: Imaam Zubair Rawat
+          - generic [ref=e734]: Bon Accueil
+          - generic [ref=e735]: +230 5900 5050
+          - link "Call Imaam Zubair Rawat in Bon Accueil" [ref=e737] [cursor=pointer]:
+            - /url: tel:+23059005050
+            - generic [ref=e740]: ↗
+        - listitem [ref=e741]:
+          - strong: Imaam Omar Hossen
+          - generic [ref=e742]: Brisée Verdière
+          - generic [ref=e743]: +230 5900 5051
+          - link "Call Imaam Omar Hossen in Brisée Verdière" [ref=e745] [cursor=pointer]:
+            - /url: tel:+23059005051
+            - generic [ref=e748]: ↗
+        - listitem [ref=e749]:
+          - strong: Imaam Ibrahim Joomun
+          - generic [ref=e750]: Roches Noires
+          - generic [ref=e751]: +230 5900 5052
+          - link "Call Imaam Ibrahim Joomun in Roches Noires" [ref=e753] [cursor=pointer]:
+            - /url: tel:+23059005052
+            - generic [ref=e756]: ↗
+    - generic [ref=e759]:
+      - paragraph [ref=e760]: Scroll to browse the complete directory.
+      - paragraph [ref=e761]: Contact details shown are sample content for this website draft.
+    - button "Close" [ref=e762] [cursor=pointer]

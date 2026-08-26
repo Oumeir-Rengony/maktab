@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "title": "Maktab.mu — Learn. Grow. Belong.",
+    "description": "Maktab.mu connects students across Mauritius with welcoming Qur'an and Islamic studies classes, on premises and online."
+  },
+  "brand": {
+    "name": "Maktab.mu",
+    "homeLabel": "Maktab.mu home"
+  },
+  "header": {
+    "navigation": [
+      { "label": "Why Maktab", "href": "#why" },
+      { "label": "On premises", "href": "#premises" },
+      { "label": "Online", "href": "#registration" }
+    ],
+    "cta": { "label": "Register now", "href": "#registration" },
+    "skipToContentLabel": "Skip to main content",
+    "mainNavigationLabel": "Main navigation",
+    "mobileNavigationLabel": "Mobile navigation",
+    "openMenuLabel": "Open navigation",
+    "closeMenuLabel": "Close navigation"
+  },
+  "hero": {
+    "eyebrow": "Qur'an & Islamic learning in Mauritius",
+    "title": "A beautiful beginning that lasts a lifetime.",
+    "description": "Support your child's journey with caring teachers, thoughtful lessons and a community rooted in faith.",
+    "primaryCta": { "label": "Start online registration", "href": "#registration" },
+    "secondaryCta": { "label": "Find a nearby maktab", "href": "#premises" },
+    "welcomeTitle": "Welcoming every learner",
+    "welcomeDescription": "Beginners and returning students",
+    "welcomeMarks": ["م", "ق", "ر"],
+    "lessonLabel": "Today's lesson",
+    "lessonTitle": "Surah Al-Fātiḥah",
+    "lessonSteps": "Read · Understand · Remember",
+    "arabicWord": "اِقْرَأْ",
+    "arabicTranslation": "Read — the first invitation",
+    "illustrationLabel": "An illustrated open Qur'an marking the beginning of a student's learning journey"
+  },
+  "motivation": {
+    "eyebrow": "More than lessons",
+    "title": "Give their heart a place to grow.",
+    "description": "Maktab is where knowledge becomes character. Each class creates space to ask, practise and belong—at a pace that feels encouraging.",
+    "items": [
+      {
+        "title": "Faith with understanding",
+        "description": "Learn to read the Qur'an with care while discovering the meaning and values behind each lesson.",
+        "icon": "shield"
+      },
+      {
+        "title": "A steady learning rhythm",
+        "description": "Clear milestones and regular guidance help students build confidence without feeling rushed.",
+        "icon": "arch"
+      },
+      {
+        "title": "Teachers who know their students",
+        "description": "Patient guidance and small-group attention make it easier for every learner to progress.",
+        "icon": "community"
+      }
+    ],
+    "quote": "The best among you are those who learn the Qur'an and teach it.",
+    "quoteSource": "Sahih al-Bukhari"
+  },
+  "premises": {
+    "eyebrow": "Learn together",
+    "title": "On-premises classes",
+    "description": "Speak directly with the local imaam to ask about schedules, age groups and available places.",
+    "tableHeaders": {
+      "imam": "Imaam",
+      "location": "Location",
+      "contact": "Contact",
+      "action": "Call"
+    },
+    "callLabel": "Call",
+    "moreTitle": "There are 48 more madrassahs to explore",
+    "moreDescription": "Browse all 52 locations across Mauritius and find the one nearest to you.",
+    "viewAllLabel": "View all 52 madrassahs",
+    "directoryNote": "Contact details shown are sample content for this website draft.",
+    "dialog": {
+      "eyebrow": "All on-premises classes",
+      "title": "Find your madrassah",
+      "description": "Search the complete directory by imaam or location.",
+      "searchLabel": "Search by imaam or location",
+      "searchPlaceholder": "e.g. Moka or Imaam Yusuf",
+      "closeLabel": "Close madrassah directory",
+      "emptyMessage": "No madrassahs match that search. Try another imaam or location.",
+      "scrollHint": "Scroll to browse the complete directory.",
+      "singularResult": "madrassah",
+      "pluralResult": "madrassahs"
+    },
+    "madrassahs": [
+      { "imam": "Imaam Abdool Rahman", "location": "Port Louis", "phone": "59001234" },
+      { "imam": "Imaam Yusuf Jeewa", "location": "Curepipe", "phone": "59002345" },
+      { "imam": "Imaam Ismail Hossen", "location": "Rose Hill", "phone": "59003456" },
+      { "imam": "Imaam Bilal Ahmad", "location": "Flacq", "phone": "59004567" },
+      { "imam": "Imaam Zayd Hossen", "location": "Quatre Bornes", "phone": "59005005" },
+      { "imam": "Imaam Farooq Ameer", "location": "Beau Bassin", "phone": "59005006" },
+      { "imam": "Imaam Hamza Patel", "location": "Vacoas", "phone": "59005007" },
+      { "imam": "Imaam Hasan Elahee", "location": "Phoenix", "phone": "59005008" },
+      { "imam": "Imaam Umar Chuttoo", "location": "Goodlands", "phone": "59005009" },
+      { "imam": "Imaam Rashid Timol", "location": "Triolet", "phone": "59005010" },
+      { "imam": "Imaam Zakariyya Mowlabaccus", "location": "Pamplemousses", "phone": "59005011" },
+      { "imam": "Imaam Imran Oozeer", "location": "Rivière du Rempart", "phone": "59005012" },
+      { "imam": "Imaam Suleiman Joomun", "location": "Mahébourg", "phone": "59005013" },
+      { "imam": "Imaam Ali Khodabocus", "location": "Plaine Magnien", "phone": "59005014" },
+      { "imam": "Imaam Salman Dookhun", "location": "L’Escalier", "phone": "59005015" },
+      { "imam": "Imaam Yahya Mamode", "location": "Souillac", "phone": "59005016" },
+      { "imam": "Imaam Idris Dinally", "location": "Chemin Grenier", "phone": "59005017" },
+      { "imam": "Imaam Khalid Peerbux", "location": "Rivière Noire", "phone": "59005018" },
+      { "imam": "Imaam Talha Aumeer", "location": "Bambous", "phone": "59005019" },
+      { "imam": "Imaam Dawood Ruhomally", "location": "Flic-en-Flac", "phone": "59005020" },
+      { "imam": "Imaam Nadeem Goolam", "location": "Tamarin", "phone": "59005021" },
+      { "imam": "Imaam Munir Curumjee", "location": "Moka", "phone": "59005022" },
+      { "imam": "Imaam Irshad Mungur", "location": "Saint Pierre", "phone": "59005023" },
+      { "imam": "Imaam Ayyub Ganoo", "location": "Quartier Militaire", "phone": "59005024" },
+      { "imam": "Imaam Haroon Kalla", "location": "Centre de Flacq", "phone": "59005025" },
+      { "imam": "Imaam Faisal Jhugroo", "location": "Bel Air", "phone": "59005026" },
+      { "imam": "Imaam Huzaifa Boodhoo", "location": "Trou d’Eau Douce", "phone": "59005027" },
+      { "imam": "Imaam Luqman Mohamad", "location": "Grand Baie", "phone": "59005028" },
+      { "imam": "Imaam Abbas Gooljar", "location": "Pereybère", "phone": "59005029" },
+      { "imam": "Imaam Mustafa Carim", "location": "Mont Choisy", "phone": "59005030" },
+      { "imam": "Imaam Ehsan Bhye", "location": "Mapou", "phone": "59005031" },
+      { "imam": "Imaam Adil Motala", "location": "Terre Rouge", "phone": "59005032" },
+      { "imam": "Imaam Shuaib Peerally", "location": "Plaine Verte", "phone": "59005033" },
+      { "imam": "Imaam Junaid Mungroo", "location": "Vallée Pitot", "phone": "59005034" },
+      { "imam": "Imaam Sameer Darsot", "location": "Roche Bois", "phone": "59005035" },
+      { "imam": "Imaam Hamid Busawon", "location": "Pailles", "phone": "59005036" },
+      { "imam": "Imaam Riyaaz Hossen", "location": "Coromandel", "phone": "59005037" },
+      { "imam": "Imaam Ilyas Seedat", "location": "Albion", "phone": "59005038" },
+      { "imam": "Imaam Saeed Dindoyal", "location": "La Gaulette", "phone": "59005039" },
+      { "imam": "Imaam Naeem Mall", "location": "Midlands", "phone": "59005040" },
+      { "imam": "Imaam Anas Mamode", "location": "Forest Side", "phone": "59005041" },
+      { "imam": "Imaam Waseem Ameer", "location": "Eau Coulée", "phone": "59005042" },
+      { "imam": "Imaam Yusuf Rawat", "location": "La Caverne", "phone": "59005043" },
+      { "imam": "Imaam Tariq Patel", "location": "Nouvelle France", "phone": "59005044" },
+      { "imam": "Imaam Abdullah Mookadam", "location": "Rose Belle", "phone": "59005045" },
+      { "imam": "Imaam Ameen Goolab", "location": "New Grove", "phone": "59005046" },
+      { "imam": "Imaam Musab Dossa", "location": "Grand Port", "phone": "59005047" },
+      { "imam": "Imaam Rayyan Kadwa", "location": "Blue Bay", "phone": "59005048" },
+      { "imam": "Imaam Adam Sobdar", "location": "Camp de Masque", "phone": "59005049" },
+      { "imam": "Imaam Zubair Rawat", "location": "Bon Accueil", "phone": "59005050" },
+      { "imam": "Imaam Omar Hossen", "location": "Brisée Verdière", "phone": "59005051" },
+      { "imam": "Imaam Ibrahim Joomun", "location": "Roches Noires", "phone": "59005052" }
+    ]
+  },
+  "registration": {
+    "eyebrow": "Learn from home",
+    "title": "Online registration",
+    "description": "Tell us a little about the student. We’ll use these details to recommend the most suitable course and level.",
+    "helpTitle": "Need help?",
+    "helpText": "Call us on",
+    "helpPhone": "59000000",
+    "requiredNote": "Fields marked with * are required.",
+    "errorMessage": "Please complete the required fields before continuing.",
+    "progressLabel": "Registration progress",
+    "steps": [
+      { "title": "Student details", "description": "About the learner" },
+      { "title": "Learning history", "description": "Previous study" }
+    ],
+    "fields": {
+      "course": "Course",
+      "coursePlaceholder": "Choose a course",
+      "studentName": "Student name",
+      "studentAge": "Age",
+      "studentAgePlaceholder": "e.g. 18",
+      "responsibleName": "Responsible party name",
+      "responsibleEmail": "Responsible party email",
+      "responsibleEmailPlaceholder": "name@example.com",
+      "relationship": "Relationship with student",
+      "relationshipPlaceholder": "Choose relationship",
+      "residence": "Residence",
+      "residencePlaceholder": "Town or district",
+      "attendedBefore": "Did the student attend madrassah before?",
+      "yes": "Yes",
+      "no": "No",
+      "previousMadrassah": "Which madrassah?",
+      "studyDuration": "How long did the student attend?",
+      "studyDurationPlaceholder": "e.g. 2 years",
+      "quranProgress": "How much Qur'an was studied?",
+      "quranProgressPlaceholder": "e.g. up to Juz 2",
+      "surahProgress": "Which surahs were learned?",
+      "surahProgressPlaceholder": "List any surahs the student can recite"
+    },
+    "courseOptions": [
+      { "label": "Qur'an reading — beginner", "value": "quran-beginner" },
+      { "label": "Qur'an reading — intermediate", "value": "quran-intermediate" },
+      { "label": "Hifz / memorisation", "value": "hifz" },
+      { "label": "Islamic studies", "value": "islamic-studies" },
+      { "label": "Not sure — please advise", "value": "unsure" }
+    ],
+    "relationshipOptions": [
+      { "label": "Parent", "value": "parent" },
+      { "label": "Guardian", "value": "guardian" },
+      { "label": "Self", "value": "self" },
+      { "label": "Other family member", "value": "family" }
+    ],
+    "actions": {
+      "next": "Continue to next step",
+      "back": "Back",
+      "submit": "Send registration",
+      "reset": "Register another student"
+    },
+    "success": {
+      "eyebrow": "Registration received",
+      "titlePrefix": "JazakAllahu khayran",
+      "description": "We’ll review the learning details and contact the responsible party with the most suitable next step."
+    }
+  },
+  "footer": {
+    "tagline": "Faith. Knowledge. Character.\nA welcoming place to learn and grow.",
+    "navigationLabel": "Footer navigation",
+    "navigation": [
+      { "label": "Why Maktab", "href": "#why" },
+      { "label": "On premises", "href": "#premises" },
+      { "label": "Online registration", "href": "#registration" }
+    ],
+    "copyright": "Maktab.mu",
+    "location": "Made with care in Mauritius 🇲🇺"
+  }
+}

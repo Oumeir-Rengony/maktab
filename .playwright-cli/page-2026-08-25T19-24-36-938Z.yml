@@ -1,0 +1,211 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Maktab.mu home" [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=e9]: Maktab.mu
+      - navigation "Main navigation" [ref=e10]:
+        - link "Why Maktab" [ref=e11] [cursor=pointer]:
+          - /url: "#why"
+        - link "On premises" [ref=e12] [cursor=pointer]:
+          - /url: "#premises"
+        - link "Online" [ref=e13] [cursor=pointer]:
+          - /url: "#registration"
+        - button "Register now" [ref=e14] [cursor=pointer]
+  - main [ref=e15]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: Qur'an & Islamic learning in Mauritius
+        - heading "A beautiful beginning that lasts a lifetime." [level=1] [ref=e21]
+        - paragraph [ref=e22]: Support your child's journey with caring teachers, thoughtful lessons and a community rooted in faith.
+        - generic [ref=e23]:
+          - button "Start online registration" [ref=e24] [cursor=pointer]
+          - link "Find a nearby maktab" [ref=e25] [cursor=pointer]:
+            - /url: "#premises"
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]: م
+            - generic [ref=e29]: ق
+            - generic [ref=e30]: ر
+          - paragraph [ref=e31]:
+            - strong [ref=e32]: Welcoming every learner
+            - text: Beginners and returning students
+      - generic "An illustrated open Qur'an marking the beginning of a student's learning journey" [ref=e33]:
+        - generic [ref=e36]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: Today's lesson
+            - strong [ref=e42]: Surah Al-Fātiḥah
+            - generic [ref=e43]: Read · Understand · Remember
+          - img "An illustrated open Qur'an marking the beginning of a student's learning journey" [ref=e44]
+        - generic [ref=e51]:
+          - paragraph [ref=e52]: اِقْرَأْ
+          - paragraph [ref=e53]: Read — the first invitation
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: More than lessons
+          - heading "Give their heart a place to grow." [level=2] [ref=e58]
+        - paragraph [ref=e59]: Maktab is where knowledge becomes character. Each class creates space to ask, practise and belong—at a pace that feels encouraging.
+      - generic [ref=e60]:
+        - article [ref=e61]:
+          - generic [ref=e66]:
+            - heading "Faith with understanding" [level=3] [ref=e67]
+            - paragraph [ref=e68]: Learn to read the Qur'an with care while discovering the meaning and values behind each lesson.
+        - article [ref=e69]:
+          - generic [ref=e73]:
+            - heading "A steady learning rhythm" [level=3] [ref=e74]
+            - paragraph [ref=e75]: Clear milestones and regular guidance help students build confidence without feeling rushed.
+        - article [ref=e76]:
+          - generic [ref=e82]:
+            - heading "Teachers who know their students" [level=3] [ref=e83]
+            - paragraph [ref=e84]: Patient guidance and small-group attention make it easier for every learner to progress.
+      - blockquote [ref=e85]:
+        - paragraph [ref=e86]: “The best among you are those who learn the Qur'an and teach it.”
+        - generic [ref=e87]: Sahih al-Bukhari
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - paragraph [ref=e92]: Learn together
+          - heading "On-premises classes" [level=2] [ref=e93]
+        - paragraph [ref=e94]: Speak directly with the local imaam to ask about schedules, age groups and available places.
+      - table [ref=e96]:
+        - caption [ref=e97]: On-premises classes
+        - rowgroup [ref=e98]:
+          - row [ref=e99]:
+            - columnheader "Imaam" [ref=e100]
+            - columnheader "Location" [ref=e101]
+            - columnheader "Contact" [ref=e102]
+            - columnheader "Call" [ref=e103]
+        - rowgroup [ref=e104]:
+          - row [ref=e105]:
+            - cell "Imaam Abdool Rahman" [ref=e106]
+            - cell "Port Louis" [ref=e107]
+            - cell "+230 5900 1234" [ref=e108]
+            - cell [ref=e109]:
+              - link "Call Imaam Abdool Rahman in Port Louis" [ref=e110] [cursor=pointer]:
+                - /url: tel:+23059001234
+                - text: Call
+                - generic [ref=e111]: ↗
+          - row [ref=e112]:
+            - cell "Imaam Yusuf Jeewa" [ref=e113]
+            - cell "Curepipe" [ref=e114]
+            - cell "+230 5900 2345" [ref=e115]
+            - cell [ref=e116]:
+              - link "Call Imaam Yusuf Jeewa in Curepipe" [ref=e117] [cursor=pointer]:
+                - /url: tel:+23059002345
+                - text: Call
+                - generic [ref=e118]: ↗
+          - row [ref=e119]:
+            - cell "Imaam Ismail Hossen" [ref=e120]
+            - cell "Rose Hill" [ref=e121]
+            - cell "+230 5900 3456" [ref=e122]
+            - cell [ref=e123]:
+              - link "Call Imaam Ismail Hossen in Rose Hill" [ref=e124] [cursor=pointer]:
+                - /url: tel:+23059003456
+                - text: Call
+                - generic [ref=e125]: ↗
+          - row [ref=e126]:
+            - cell "Imaam Bilal Ahmad" [ref=e127]
+            - cell "Flacq" [ref=e128]
+            - cell "+230 5900 4567" [ref=e129]
+            - cell [ref=e130]:
+              - link "Call Imaam Bilal Ahmad in Flacq" [ref=e131] [cursor=pointer]:
+                - /url: tel:+23059004567
+                - text: Call
+                - generic [ref=e132]: ↗
+      - generic [ref=e133]:
+        - paragraph [ref=e134]:
+          - strong [ref=e135]: There are 48 more madrassahs to explore
+          - text: Browse all 52 locations across Mauritius and find the one nearest to you.
+        - button "View all 52 madrassahs" [ref=e136] [cursor=pointer]
+      - paragraph [ref=e137]: Contact details shown are sample content for this website draft.
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - paragraph [ref=e141]: Learn from home
+        - heading "Online registration" [level=2] [ref=e142]
+        - paragraph [ref=e143]: Tell us a little about the student. We’ll use these details to recommend the most suitable course and level.
+        - paragraph [ref=e147]:
+          - strong [ref=e148]: Need help?
+          - text: Call us on
+          - link "+230 5900 0000" [ref=e149] [cursor=pointer]:
+            - /url: tel:+23059000000
+      - generic [ref=e150]:
+        - list "Registration progress" [ref=e152]:
+          - listitem [ref=e153]:
+            - generic [ref=e154]: "1"
+            - generic [ref=e155]:
+              - strong [ref=e156]: Student details
+              - text: About the learner
+          - listitem [ref=e157]
+          - listitem [ref=e158]:
+            - generic [ref=e159]: "2"
+            - generic [ref=e160]:
+              - strong [ref=e161]: Learning history
+              - text: Previous study
+        - group "Student details" [ref=e164]:
+          - paragraph [ref=e166]: Fields marked with * are required.
+          - generic [ref=e167]:
+            - group [ref=e168]:
+              - generic [ref=e169]:
+                - text: Course
+                - generic [ref=e170]: "*"
+              - combobox "Course" [ref=e171] [cursor=pointer]:
+                - generic [ref=e172]: Choose a course
+                - img: ▼
+              - textbox [ref=e173]
+            - generic [ref=e174]:
+              - group [ref=e175]:
+                - generic [ref=e176]:
+                  - text: Student name
+                  - generic [ref=e177]: "*"
+                - textbox "Student name" [ref=e178]
+              - group [ref=e179]:
+                - generic [ref=e180]:
+                  - text: Age
+                  - generic [ref=e181]: "*"
+                - spinbutton "Age" [ref=e182]
+              - group [ref=e183]:
+                - generic [ref=e184]:
+                  - text: Responsible party name
+                  - generic [ref=e185]: "*"
+                - textbox "Responsible party name" [ref=e186]
+              - group [ref=e187]:
+                - generic [ref=e188]:
+                  - text: Responsible party email
+                  - generic [ref=e189]: "*"
+                - textbox "Responsible party email" [ref=e190]:
+                  - /placeholder: name@example.com
+              - group [ref=e191]:
+                - generic [ref=e192]:
+                  - text: Relationship with student
+                  - generic [ref=e193]: "*"
+                - combobox "Relationship with student" [ref=e194] [cursor=pointer]:
+                  - generic [ref=e195]: Choose relationship
+                  - img: ▼
+                - textbox [ref=e196]
+              - group [ref=e197]:
+                - generic [ref=e198]:
+                  - text: Residence
+                  - generic [ref=e199]: "*"
+                - textbox "Residence" [ref=e200]:
+                  - /placeholder: Town or district
+          - button "Continue to next step" [ref=e202] [cursor=pointer]
+  - contentinfo [ref=e203]:
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - link "Maktab.mu home" [ref=e206] [cursor=pointer]:
+          - /url: "#top"
+          - generic [ref=e210]: Maktab.mu
+        - paragraph [ref=e211]: Faith. Knowledge. Character. A welcoming place to learn and grow.
+        - navigation "Footer navigation" [ref=e212]:
+          - link "Why Maktab" [ref=e213] [cursor=pointer]:
+            - /url: "#why"
+          - link "On premises" [ref=e214] [cursor=pointer]:
+            - /url: "#premises"
+          - link "Online registration" [ref=e215] [cursor=pointer]:
+            - /url: "#registration"
+      - generic [ref=e216]:
+        - paragraph [ref=e217]: © 2026 Maktab.mu
+        - paragraph [ref=e218]: Made with care in Mauritius 🇲🇺
