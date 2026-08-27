@@ -1,4 +1,4 @@
-import { BookOpenTextIcon } from "lucide-react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import type { BrandData } from "@/lib/types";
@@ -20,12 +20,20 @@ export function Brand({ brand, inverted = false }: BrandProps) {
         inverted ? "text-background" : "text-foreground",
       )}
     >
-      <span className="grid size-10 place-items-center rounded-full bg-ocean text-ocean-foreground">
-        <BookOpenTextIcon className="size-5" aria-hidden="true" />
-      </span>
-      <span className="text-xl">
+      {/* <Image
+        src="/logo.png"
+        alt=""
+        width={466}
+        height={591}
+        sizes="3.5rem"
+        preload={!inverted}
+        className="h-14 w-auto shrink-0"
+      /> */}
+      <img src="/logo.webp" alt="" className="h-14 w-auto shrink-0" />
+
+      {/* <span className="text-xl">
         {name}<span className="text-coral">.</span>{suffix}
-      </span>
+      </span> */}
     </a>
   );
 }

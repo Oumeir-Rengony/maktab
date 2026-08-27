@@ -1,7 +1,17 @@
 {
   "metadata": {
     "title": "Maktab.mu — Learn. Grow. Belong.",
-    "description": "Maktab.mu connects students across Mauritius with welcoming Qur'an and Islamic studies classes, on premises and online."
+    "description": "Maktab.mu connects students across Mauritius with welcoming Qur'an and Islamic studies classes, on premises and online.",
+    "canonicalUrl": "https://maktab.mu",
+    "locale": "en_MU",
+    "logoAlt": "Maktab.mu Qur'an learning logo",
+    "keywords": [
+      "Maktab Mauritius",
+      "madrassah Mauritius",
+      "Qur'an classes Mauritius",
+      "Islamic studies Mauritius",
+      "online madrassah"
+    ]
   },
   "brand": {
     "name": "Maktab.mu",

@@ -23,7 +23,7 @@ function HeroIllustration({ hero }: HeroSectionProps) {
             aria-hidden="true"
           /> */}
 
-          <img src="/logo.png" alt="" className="max-w-full z-10" />
+          <img src="/hero.png" alt="" className="max-w-full z-10" />
 
           {/* <img
             src="/crescent-moon.png"
@@ -101,7 +101,7 @@ function HeroIllustration({ hero }: HeroSectionProps) {
 
 export function HeroSection({ hero }: HeroSectionProps) {
   return (
-    <section id="top" className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:min-h-[49rem] lg:pt-24">
+    <section id="top" className="hero-atmosphere relative overflow-hidden pt-28 pb-20 lg:min-h-196 lg:pt-26">
       <div className="hero-rings absolute -bottom-32 -left-28 size-80 rounded-full border border-ocean/20" aria-hidden="true" />
       <div className="section-shell relative grid items-center gap-12 lg:grid-cols-[1fr_0.92fr] lg:gap-20">
         <div>

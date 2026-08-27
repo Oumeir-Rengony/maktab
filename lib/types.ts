@@ -188,6 +188,10 @@ export interface SiteData {
   metadata: {
     title: string;
     description: string;
+    canonicalUrl: string;
+    locale: string;
+    logoAlt: string;
+    keywords: string[];
   };
   brand: BrandData;
   header: HeaderData;

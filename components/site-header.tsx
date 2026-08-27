@@ -53,11 +53,11 @@ export function SiteHeader({ brand, header }: SiteHeaderProps) {
             <MenuIcon />
           </DialogTrigger>
           <DialogContent className="inset-0 h-dvh max-h-none w-full max-w-none translate-x-0 translate-y-0 rounded-none p-8 md:hidden">
-            <DialogHeader>
+            {/* <DialogHeader>
               <DialogTitle className="sr-only">{header.closeMenuLabel}</DialogTitle>
               <DialogDescription className="sr-only">{header.openMenuLabel}</DialogDescription>
-            </DialogHeader>
-            <nav className="flex h-full flex-col justify-center gap-7 font-heading text-4xl" aria-label={header.mobileNavigationLabel}>
+            </DialogHeader> */}
+            <nav className="flex h-full flex-col justify-start gap-7 font-heading text-4xl pt-16" aria-label={header.mobileNavigationLabel}>
               {header.navigation.map((item) => (
                 <a key={item.href} href={item.href} onClick={() => setIsMenuOpen(false)}>
                   {item.label}
