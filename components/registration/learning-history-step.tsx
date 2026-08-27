@@ -11,6 +11,7 @@ interface LearningHistoryStepProps {
   data: RegistrationData;
   formState: RegistrationFormState;
   invalidFields: Set<RegistrationFieldName>;
+  isSubmitting: boolean;
   onFieldChange: (field: RegistrationFieldName, value: string) => void;
   onBack: () => void;
 }
@@ -19,6 +20,7 @@ export function LearningHistoryStep({
   data,
   formState,
   invalidFields,
+  isSubmitting,
   onFieldChange,
   onBack,
 }: LearningHistoryStepProps) {
@@ -41,6 +43,7 @@ export function LearningHistoryStep({
             variant="outline"
             value={formState.attendedBefore ? [formState.attendedBefore] : []}
             onValueChange={(value) => onFieldChange("attendedBefore", value[0] ?? "")}
+            disabled={isSubmitting}
             className="grid w-full grid-cols-2"
           >
             <ToggleGroupItem value="yes">{data.fields.yes}</ToggleGroupItem>
@@ -57,6 +60,7 @@ export function LearningHistoryStep({
                 value={formState.previousMadrassah}
                 onChange={(event) => onFieldChange("previousMadrassah", event.target.value)}
                 aria-invalid={invalidFields.has("previousMadrassah")}
+                disabled={isSubmitting}
               />
             </Field>
             <Field data-invalid={invalidFields.has("studyDuration")}>
@@ -67,6 +71,7 @@ export function LearningHistoryStep({
                 onChange={(event) => onFieldChange("studyDuration", event.target.value)}
                 placeholder={data.fields.studyDurationPlaceholder}
                 aria-invalid={invalidFields.has("studyDuration")}
+                disabled={isSubmitting}
               />
             </Field>
             <Field data-invalid={invalidFields.has("quranProgress")}>
@@ -77,6 +82,7 @@ export function LearningHistoryStep({
                 onChange={(event) => onFieldChange("quranProgress", event.target.value)}
                 placeholder={data.fields.quranProgressPlaceholder}
                 aria-invalid={invalidFields.has("quranProgress")}
+                disabled={isSubmitting}
               />
             </Field>
             <Field className="sm:col-span-2" data-invalid={invalidFields.has("surahProgress")}>
@@ -89,6 +95,7 @@ export function LearningHistoryStep({
                 rows={3}
                 className="min-h-26"
                 aria-invalid={invalidFields.has("surahProgress")}
+                disabled={isSubmitting}
               />
             </Field>
           </div>
@@ -96,12 +103,12 @@ export function LearningHistoryStep({
       </FieldGroup>
 
       <div className="mt-9 flex flex-col-reverse justify-between gap-3 sm:flex-row">
-        <Button type="button" variant="outline" size="lg" onClick={onBack}>
+        <Button type="button" variant="outline" size="lg" onClick={onBack} disabled={isSubmitting}>
           <ChevronLeftIcon data-icon="inline-start" />
           {data.actions.back}
         </Button>
-        <Button type="submit" size="lg">
-          {data.actions.submit}
+        <Button type="submit" size="lg" disabled={isSubmitting}>
+          {isSubmitting ? data.actions.submitting : data.actions.submit}
           <ChevronRightIcon data-icon="inline-end" />
         </Button>
       </div>

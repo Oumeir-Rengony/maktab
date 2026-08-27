@@ -100,6 +100,7 @@ export interface RegistrationData {
   helpPhone: string;
   requiredNote: string;
   errorMessage: string;
+  submissionError: string;
   progressLabel: string;
   steps: Array<{
     title: string;
@@ -114,6 +115,8 @@ export interface RegistrationData {
     responsibleName: string;
     responsibleEmail: string;
     responsibleEmailPlaceholder: string;
+    responsiblePhone: string;
+    responsiblePhonePlaceholder: string;
     relationship: string;
     relationshipPlaceholder: string;
     residence: string;
@@ -135,6 +138,7 @@ export interface RegistrationData {
     next: string;
     back: string;
     submit: string;
+    submitting: string;
     reset: string;
   };
   success: {
@@ -150,6 +154,7 @@ export interface RegistrationFormState {
   studentAge: string;
   responsibleName: string;
   responsibleEmail: string;
+  responsiblePhone: string;
   relationship: string;
   residence: string;
   attendedBefore: string;
@@ -160,6 +165,16 @@ export interface RegistrationFormState {
 }
 
 export type RegistrationFieldName = keyof RegistrationFormState;
+
+export type RegistrationApiResponse =
+  | {
+      success: true;
+    }
+  | {
+      success: false;
+      error: "INVALID_REGISTRATION" | "SUBMISSION_FAILED";
+      invalidFields?: RegistrationFieldName[];
+    };
 
 export interface FooterData {
   tagline: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
 
 import { LearningHistoryStep } from "@/components/registration/learning-history-step";
@@ -9,7 +9,12 @@ import { StudentDetailsStep } from "@/components/registration/student-details-st
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { FieldError } from "@/components/ui/field";
+import {
+  getInvalidLearningHistoryFields,
+  getInvalidStudentDetailFields,
+} from "@/lib/registration";
 import type {
+  RegistrationApiResponse,
   RegistrationData,
   RegistrationFieldName,
   RegistrationFormState,
@@ -25,6 +30,7 @@ const initialFormState: RegistrationFormState = {
   studentAge: "",
   responsibleName: "",
   responsibleEmail: "",
+  responsiblePhone: "",
   relationship: "",
   residence: "",
   attendedBefore: "",
@@ -40,15 +46,9 @@ const studentDetailFields: RegistrationFieldName[] = [
   "studentAge",
   "responsibleName",
   "responsibleEmail",
+  "responsiblePhone",
   "relationship",
   "residence",
-];
-
-const previousStudyFields: RegistrationFieldName[] = [
-  "previousMadrassah",
-  "studyDuration",
-  "quranProgress",
-  "surahProgress",
 ];
 
 export function RegistrationForm({ data }: RegistrationFormProps) {
@@ -56,6 +56,9 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
   const [formState, setFormState] = useState<RegistrationFormState>(initialFormState);
   const [invalidFields, setInvalidFields] = useState<Set<RegistrationFieldName>>(new Set());
   const [isComplete, setIsComplete] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState("");
+  const submissionInProgress = useRef(false);
 
   function updateField(field: RegistrationFieldName, value: string) {
     setFormState((currentState) => ({ ...currentState, [field]: value }));
@@ -64,51 +67,94 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
       nextFields.delete(field);
       return nextFields;
     });
-  }
-
-  function findEmptyFields(fieldNames: RegistrationFieldName[]) {
-    return fieldNames.filter((fieldName) => !formState[fieldName].trim());
+    setSubmissionError("");
   }
 
   function continueToHistory() {
-    const emptyFields = findEmptyFields(studentDetailFields);
-    const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.responsibleEmail);
-    const age = Number(formState.studentAge);
-    const ageIsValid = Number.isInteger(age) && age >= 4 && age <= 99;
+    const invalidStudentFields = getInvalidStudentDetailFields(
+      formState,
+      data.courseOptions,
+      data.relationshipOptions,
+    );
 
-    if (!emailIsValid && !emptyFields.includes("responsibleEmail")) {
-      emptyFields.push("responsibleEmail");
-    }
-
-    if (!ageIsValid && !emptyFields.includes("studentAge")) {
-      emptyFields.push("studentAge");
-    }
-
-    if (emptyFields.length > 0) {
-      setInvalidFields(new Set(emptyFields));
+    if (invalidStudentFields.length > 0) {
+      setInvalidFields(new Set(invalidStudentFields));
       return;
     }
 
     setInvalidFields(new Set());
+    setSubmissionError("");
     setCurrentStep(2);
   }
 
-  function submitRegistration(event: React.FormEvent<HTMLFormElement>) {
+  async function submitRegistration(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const fieldsToValidate: RegistrationFieldName[] = ["attendedBefore"];
-    if (formState.attendedBefore === "yes") {
-      fieldsToValidate.push(...previousStudyFields);
+    if (submissionInProgress.current) {
+      return;
     }
 
-    const emptyFields = findEmptyFields(fieldsToValidate);
-    if (emptyFields.length > 0) {
-      setInvalidFields(new Set(emptyFields));
+    const invalidStudentFields = getInvalidStudentDetailFields(
+      formState,
+      data.courseOptions,
+      data.relationshipOptions,
+    );
+    if (invalidStudentFields.length > 0) {
+      setInvalidFields(new Set(invalidStudentFields));
+      setCurrentStep(1);
+      return;
+    }
+
+    const invalidHistoryFields = getInvalidLearningHistoryFields(formState);
+    if (invalidHistoryFields.length > 0) {
+      setInvalidFields(new Set(invalidHistoryFields));
       return;
     }
 
     setInvalidFields(new Set());
-    setIsComplete(true);
+    setSubmissionError("");
+    setIsSubmitting(true);
+    submissionInProgress.current = true;
+
+    try {
+      const response = await fetch("/api/registrations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+      const result = (await response.json()) as RegistrationApiResponse;
+
+      if (!response.ok || !result.success) {
+        if (result.success === false && result.error === "INVALID_REGISTRATION") {
+          const serverInvalidFields = result.invalidFields ?? [];
+          setInvalidFields(new Set(serverInvalidFields));
+
+          const hasInvalidStudentField = serverInvalidFields.some((fieldName) =>
+            studentDetailFields.includes(fieldName),
+          );
+          if (hasInvalidStudentField) {
+            setCurrentStep(1);
+          }
+
+          if (serverInvalidFields.length === 0) {
+            setSubmissionError(data.errorMessage);
+          }
+        } else {
+          setSubmissionError(data.submissionError);
+        }
+
+        return;
+      }
+
+      setIsComplete(true);
+    } catch {
+      setSubmissionError(data.submissionError);
+    } finally {
+      submissionInProgress.current = false;
+      setIsSubmitting(false);
+    }
   }
 
   function resetForm() {
@@ -116,6 +162,9 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
     setInvalidFields(new Set());
     setCurrentStep(1);
     setIsComplete(false);
+    setIsSubmitting(false);
+    setSubmissionError("");
+    submissionInProgress.current = false;
   }
 
   if (isComplete) {
@@ -144,10 +193,15 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
         <RegistrationProgress currentStep={currentStep} steps={data.steps} progressLabel={data.progressLabel} />
       </CardHeader>
       <CardContent>
-        <form className="registration-form" onSubmit={submitRegistration} noValidate>
-          {invalidFields.size > 0 ? (
+        <form
+          className="registration-form"
+          onSubmit={submitRegistration}
+          aria-busy={isSubmitting}
+          noValidate
+        >
+          {invalidFields.size > 0 || submissionError ? (
             <FieldError className="mb-5 border-l-4 border-destructive bg-destructive/10 p-3">
-              {data.errorMessage}
+              {submissionError || data.errorMessage}
             </FieldError>
           ) : null}
 
@@ -164,8 +218,12 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
               data={data}
               formState={formState}
               invalidFields={invalidFields}
+              isSubmitting={isSubmitting}
               onFieldChange={updateField}
-              onBack={() => setCurrentStep(1)}
+              onBack={() => {
+                setSubmissionError("");
+                setCurrentStep(1);
+              }}
             />
           )}
         </form>

@@ -151,6 +151,7 @@
     "helpPhone": "59000000",
     "requiredNote": "Fields marked with * are required.",
     "errorMessage": "Please complete the required fields before continuing.",
+    "submissionError": "We couldn’t send the registration. Please try again.",
     "progressLabel": "Registration progress",
     "steps": [
       { "title": "Student details", "description": "About the learner" },
@@ -165,6 +166,8 @@
       "responsibleName": "Responsible party name",
       "responsibleEmail": "Responsible party email",
       "responsibleEmailPlaceholder": "name@example.com",
+      "responsiblePhone": "Responsible party phone",
+      "responsiblePhonePlaceholder": "5900 7777",
       "relationship": "Relationship with student",
       "relationshipPlaceholder": "Choose relationship",
       "residence": "Residence",
@@ -197,6 +200,7 @@
       "next": "Continue to next step",
       "back": "Back",
       "submit": "Send registration",
+      "submitting": "Sending registration…",
       "reset": "Register another student"
     },
     "success": {

@@ -141,6 +141,21 @@ export function StudentDetailsStep({
               required
             />
           </Field>
+          <Field data-invalid={invalidFields.has("responsiblePhone")}>
+            <RequiredLabel htmlFor="responsible-phone">{data.fields.responsiblePhone}</RequiredLabel>
+            <Input
+              id="responsible-phone"
+              name="responsiblePhone"
+              type="tel"
+              inputMode="tel"
+              value={formState.responsiblePhone}
+              onChange={(event) => onFieldChange("responsiblePhone", event.target.value)}
+              autoComplete="tel"
+              placeholder={data.fields.responsiblePhonePlaceholder}
+              aria-invalid={invalidFields.has("responsiblePhone")}
+              required
+            />
+          </Field>
           <Field data-invalid={invalidFields.has("relationship")}>
             <RequiredLabel htmlFor="relationship">{data.fields.relationship}</RequiredLabel>
             <Select
