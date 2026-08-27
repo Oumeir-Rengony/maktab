@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
 
 import { LearningHistoryStep } from "@/components/registration/learning-history-step";
@@ -13,6 +13,7 @@ import {
   getInvalidLearningHistoryFields,
   getInvalidStudentDetailFields,
 } from "@/lib/registration";
+import { cn } from "@/lib/utils";
 import type {
   RegistrationApiResponse,
   RegistrationData,
@@ -59,6 +60,9 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState("");
   const submissionInProgress = useRef(false);
+  const formCardRef = useRef<HTMLDivElement>(null);
+  const successHeadingRef = useRef<HTMLHeadingElement>(null);
+
 
   function updateField(field: RegistrationFieldName, value: string) {
     setFormState((currentState) => ({ ...currentState, [field]: value }));
@@ -82,6 +86,11 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
       return;
     }
 
+    formCardRef.current?.scrollIntoView({
+      behavior: "auto",
+      block: "start",
+    });
+
     setInvalidFields(new Set());
     setSubmissionError("");
     setCurrentStep(2);
@@ -99,6 +108,7 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
       data.courseOptions,
       data.relationshipOptions,
     );
+
     if (invalidStudentFields.length > 0) {
       setInvalidFields(new Set(invalidStudentFields));
       setCurrentStep(1);
@@ -148,6 +158,12 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
         return;
       }
 
+      successHeadingRef.current?.scrollIntoView({
+        behavior: "auto",
+        block: "center"
+      });
+
+
       setIsComplete(true);
     } catch {
       setSubmissionError(data.submissionError);
@@ -157,77 +173,123 @@ export function RegistrationForm({ data }: RegistrationFormProps) {
     }
   }
 
-  function resetForm() {
-    setFormState(initialFormState);
-    setInvalidFields(new Set());
-    setCurrentStep(1);
-    setIsComplete(false);
-    setIsSubmitting(false);
-    setSubmissionError("");
-    submissionInProgress.current = false;
-  }
+  // function resetForm() {
+  //   setFormState(initialFormState);
+  //   setInvalidFields(new Set());
+  //   setCurrentStep(1);
+  //   setIsComplete(false);
+  //   setIsSubmitting(false);
+  //   setSubmissionError("");
+  //   submissionInProgress.current = false;
+  // }
 
-  if (isComplete) {
-    return (
-      <Card size="registration" className="registration-card w-full">
-        <CardContent className="flex min-h-[32rem] flex-col items-center justify-center gap-4 text-center">
+  return (
+    <Card
+      ref={formCardRef}
+      size="registration"
+      className="registration-card w-full scroll-mt-24"
+    >
+      <div className="grid">
+        <div
+          className={cn(
+            "col-start-1 row-start-1 flex flex-col gap-(--card-spacing)",
+            isComplete && "invisible pointer-events-none",
+          )}
+          aria-hidden={isComplete}
+          inert={isComplete}
+        >
+          <CardHeader>
+            <RegistrationProgress
+              currentStep={currentStep}
+              steps={data.steps}
+              progressLabel={data.progressLabel}
+            />
+          </CardHeader>
+          <CardContent>
+            <form
+              className="registration-form"
+              onSubmit={submitRegistration}
+              aria-busy={isSubmitting}
+              noValidate
+            >
+              {invalidFields.size > 0 || submissionError ? (
+                <FieldError className="mb-5 border-l-4 border-destructive bg-destructive/10 p-3">
+                  {submissionError || data.errorMessage}
+                </FieldError>
+              ) : null}
+
+              <div className="grid">
+                <div
+                  className={cn(
+                    "col-start-1 row-start-1",
+                    currentStep !== 1 && "invisible pointer-events-none",
+                  )}
+                  aria-hidden={currentStep !== 1}
+                  inert={currentStep !== 1}
+                >
+                  <StudentDetailsStep
+                    data={data}
+                    formState={formState}
+                    invalidFields={invalidFields}
+                    onFieldChange={updateField}
+                    onContinue={continueToHistory}
+                  />
+                </div>
+                <div
+                  className={cn(
+                    "col-start-1 row-start-1",
+                    currentStep !== 2 && "invisible pointer-events-none",
+                  )}
+                  aria-hidden={currentStep !== 2}
+                  inert={currentStep !== 2}
+                >
+                  <LearningHistoryStep
+                    data={data}
+                    formState={formState}
+                    invalidFields={invalidFields}
+                    isSubmitting={isSubmitting}
+                    onFieldChange={updateField}
+                    onBack={() => {
+                      formCardRef.current?.scrollIntoView({
+                        behavior: "auto",
+                        block: "start",
+                      });
+                      setSubmissionError("");
+                      setCurrentStep(1);
+                    }}
+                  />
+                </div>
+              </div>
+            </form>
+          </CardContent>
+        </div>
+
+        <CardContent
+          className={cn(
+            "col-start-1 row-start-1 flex min-h-[32rem] flex-col items-center justify-center gap-4 text-center",
+            !isComplete && "invisible pointer-events-none",
+          )}
+          role="status"
+          aria-hidden={!isComplete}
+          inert={!isComplete}
+        >
           <span className="grid size-20 place-items-center rounded-full bg-ocean text-ocean-foreground">
             <CheckIcon className="size-10" aria-hidden="true" />
           </span>
           <p className="eyebrow">{data.success.eyebrow}</p>
-          <h3 className="font-heading text-4xl">
+          <h3
+            ref={successHeadingRef}
+            tabIndex={-1}
+            className="font-heading text-4xl outline-none"
+          >
             {data.success.titlePrefix}, {formState.studentName}.
           </h3>
           <p className="max-w-lg text-muted-foreground">{data.success.description}</p>
-          <Button type="button" variant="link" onClick={resetForm}>
+          {/* <Button type="button" variant="link" onClick={resetForm}>
             {data.actions.reset}
-          </Button>
+          </Button> */}
         </CardContent>
-      </Card>
-    );
-  }
-
-  return (
-    <Card size="registration" className="registration-card w-full">
-      <CardHeader>
-        <RegistrationProgress currentStep={currentStep} steps={data.steps} progressLabel={data.progressLabel} />
-      </CardHeader>
-      <CardContent>
-        <form
-          className="registration-form"
-          onSubmit={submitRegistration}
-          aria-busy={isSubmitting}
-          noValidate
-        >
-          {invalidFields.size > 0 || submissionError ? (
-            <FieldError className="mb-5 border-l-4 border-destructive bg-destructive/10 p-3">
-              {submissionError || data.errorMessage}
-            </FieldError>
-          ) : null}
-
-          {currentStep === 1 ? (
-            <StudentDetailsStep
-              data={data}
-              formState={formState}
-              invalidFields={invalidFields}
-              onFieldChange={updateField}
-              onContinue={continueToHistory}
-            />
-          ) : (
-            <LearningHistoryStep
-              data={data}
-              formState={formState}
-              invalidFields={invalidFields}
-              isSubmitting={isSubmitting}
-              onFieldChange={updateField}
-              onBack={() => {
-                setSubmissionError("");
-                setCurrentStep(1);
-              }}
-            />
-          )}
-        </form>
-      </CardContent>
+      </div>
     </Card>
   );
 }
