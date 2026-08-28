@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: data.metadata.description,
     images: [
       {
-        url: "/logo.webp",
+        url: "/og-image.webp",
         width: 466,
         height: 591,
         alt: data.metadata.logoAlt,
@@ -51,12 +51,12 @@ export const metadata: Metadata = {
     card: "summary",
     title: data.metadata.title,
     description: data.metadata.description,
-    images: ["/logo.webp"],
+    images: ["/og-image.webp"],
   },
   icons: {
-    icon: [{ url: "/logo.webp", type: "image/png" }],
-    shortcut: ["/logo.webp"],
-    apple: [{ url: "/logo.webp", type: "image/png" }],
+    icon: [{ url: "/og-image.webp", type: "image/png" }],
+    shortcut: ["/og-image.webp"],
+    apple: [{ url: "/og-image.webp", type: "image/png" }],
   },
   robots: {
     index: true,
