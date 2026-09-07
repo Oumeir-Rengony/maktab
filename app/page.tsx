@@ -24,6 +24,8 @@ export default function Home() {
     icon: motivationIcons[item.icon],
   }));
 
+  console.log(data.motivation);
+
   return (
     <>
       <a
@@ -41,6 +43,7 @@ export default function Home() {
           description={data.motivation.description}
           items={motivationItems}
           quote={data.motivation.quote}
+          arabicQuote={data.motivation.arabicQuote}
           quoteSource={data.motivation.quoteSource}
         />
         <PremisesSection premises={data.premises} />

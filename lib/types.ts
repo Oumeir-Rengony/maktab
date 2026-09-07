@@ -47,6 +47,7 @@ export interface MotivationData {
   description: string;
   items: MotivationItem[];
   quote: string;
+  arabicQuote: string;
   quoteSource: string;
 }
 

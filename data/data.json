@@ -19,9 +19,10 @@
   },
   "header": {
     "navigation": [
-      { "label": "Why Maktab", "href": "#why" },
+      { "label": "Why Maktab.mu", "href": "#why" },
       { "label": "On premises", "href": "#premises" },
-      { "label": "Online", "href": "#registration" }
+      { "label": "Online", "href": "#registration" },
+      { "label": "About us", "href": "/about" }
     ],
     "cta": { "label": "Register now", "href": "#registration" },
     "skipToContentLabel": "Skip to main content",
@@ -68,6 +69,7 @@
       }
     ],
     "quote": "The best among you are those who learn the Qur'an and teach it.",
+    "arabicQuote": "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
     "quoteSource": "Sahih al-Bukhari"
   },
   "premises": {
@@ -223,7 +225,7 @@
     "tagline": "Faith. Knowledge. Character.\nA welcoming place to learn and grow.",
     "navigationLabel": "Footer navigation",
     "navigation": [
-      { "label": "Why Maktab", "href": "#why" },
+      { "label": "Why Maktab.mu", "href": "#why" },
       { "label": "On premises", "href": "#premises" },
       { "label": "Online registration", "href": "#registration" }
     ],

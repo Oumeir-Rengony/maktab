@@ -11,6 +11,7 @@ interface MotivationSectionProps {
   title: string;
   description: string;
   items: MotivationItemViewModel[];
+  arabicQuote: string;
   quote: string;
   quoteSource: string;
 }
@@ -21,8 +22,12 @@ export function MotivationSection({
   description,
   items,
   quote,
+  arabicQuote,
   quoteSource,
 }: MotivationSectionProps) {
+
+  console.log(arabicQuote);
+
   return (
     <section id="why" className="section-shell py-20 md:py-32">
       <div className="grid items-end gap-6 md:grid-cols-[1.3fr_0.7fr] md:gap-20">
@@ -48,7 +53,8 @@ export function MotivationSection({
       </div>
 
       <blockquote className="mx-auto mt-20 max-w-4xl text-center">
-        <p className="font-heading text-3xl leading-tight md:text-5xl">“{quote}”</p>
+        <p className="font-heading text-3xl leading-tight md:text-5xl pb-8">“{arabicQuote}”</p>
+        <p className="w-3/4 flex mx-auto font-heading text-xl leading-tight md:text-3xl">“{quote}”</p>
         <cite className="mt-4 block text-xs font-bold tracking-[0.14em] text-muted-foreground not-italic uppercase">{quoteSource}</cite>
       </blockquote>
     </section>

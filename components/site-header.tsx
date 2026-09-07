@@ -24,7 +24,7 @@ export function SiteHeader({ brand, header }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-20">
+    <header className="sticky inset-x-0 top-0 z-20 bg-secondary">
       <div className="section-shell flex h-24 items-center justify-between">
         <Brand brand={brand} />
 
