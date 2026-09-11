@@ -318,7 +318,7 @@ export function TeacherRegistrationForm() {
               {submissionError || "Please correct the highlighted fields before registering."}
             </FieldError>
           ) : null}
-          <FormSection number="01" title="About you">
+          <FormSection number="01" title="Your details">
             <div className="grid gap-5 sm:grid-cols-2">
               <Field className="sm:col-span-2" data-invalid={hasInvalidField("fullName")}>
                 <FieldLabel htmlFor="full-name">Full name <span aria-hidden="true">*</span></FieldLabel>
