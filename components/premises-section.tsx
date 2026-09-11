@@ -118,29 +118,37 @@ function DirectoryDialog({ premises }: PremisesSectionProps) {
         <ChevronRightIcon data-icon="inline-end" />
       </DialogTrigger>
       <DialogContent className="flex h-[calc(100dvh-1rem)] w-[calc(100%-1rem)] max-w-[66rem] flex-col gap-0 overflow-hidden rounded-none p-0 sm:h-[min(88dvh,52rem)] sm:w-[calc(100%-2rem)] sm:max-w-[66rem]">
-        <DialogHeader className="px-5 pt-6 pb-5 pr-20 sm:px-8 sm:pt-8 sm:pr-24">
+        <DialogHeader className="px-4 py-4 pr-16 sm:px-8 sm:pt-8 sm:pb-5 sm:pr-24">
           <p className="eyebrow">{premises.dialog.eyebrow}</p>
-          <DialogTitle className="display-title text-4xl sm:text-5xl">
+          <DialogTitle className="display-title text-3xl sm:text-5xl">
             {premises.dialog.title}
           </DialogTitle>
           <DialogDescription className="sr-only">{premises.dialog.description}</DialogDescription>
         </DialogHeader>
 
-        <div className="grid items-end gap-3 border-b px-5 pb-5 sm:grid-cols-[1fr_14rem_auto] sm:gap-6 sm:px-8">
+        <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(7rem,0.8fr)] items-end gap-2 border-b px-4 pb-3 sm:grid-cols-[1fr_14rem_auto] sm:gap-6 sm:px-8 sm:pb-5">
           <Field>
-            <FieldLabel htmlFor="directory-search">{premises.dialog.searchLabel}</FieldLabel>
+            <FieldLabel htmlFor="directory-search" className="sr-only sm:not-sr-only">
+              {premises.dialog.searchLabel}
+            </FieldLabel>
             <Input
               id="directory-search"
               type="search"
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               placeholder={premises.dialog.searchPlaceholder}
+              className="h-11 sm:h-[3.25rem]"
             />
           </Field>
           <Field>
-            <FieldLabel htmlFor="directory-location">{premises.dialog.locationFilterLabel}</FieldLabel>
+            <FieldLabel htmlFor="directory-location" className="sr-only sm:not-sr-only">
+              {premises.dialog.locationFilterLabel}
+            </FieldLabel>
             <Select value={selectedLocation} onValueChange={(value) => setSelectedLocation(value ?? "all")}>
-              <SelectTrigger id="directory-location" className="w-full">
+              <SelectTrigger
+                id="directory-location"
+                className="w-full data-[size=default]:h-11 sm:data-[size=default]:h-[3.25rem]"
+              >
                 <SelectValue />
               </SelectTrigger>
               <SelectContent alignItemWithTrigger={false}>
@@ -151,7 +159,7 @@ function DirectoryDialog({ premises }: PremisesSectionProps) {
               </SelectContent>
             </Select>
           </Field>
-          <p className="pb-4 text-sm font-bold text-muted-foreground" role="status" aria-live="polite">
+          <p className="col-span-2 pt-1 text-xs font-bold text-muted-foreground sm:col-span-1 sm:pb-4 sm:pt-0 sm:text-sm" role="status" aria-live="polite">
             {filteredMadrassahs.length} {resultLabel}
           </p>
         </div>
@@ -184,11 +192,6 @@ function DirectoryDialog({ premises }: PremisesSectionProps) {
             <p className="px-5 py-16 text-center text-muted-foreground sm:px-8">{premises.dialog.emptyMessage}</p>
           )}
         </ScrollArea>
-
-        <div className="flex flex-col gap-1 border-t bg-popover px-5 py-4 text-xs text-muted-foreground sm:flex-row sm:justify-between sm:px-8">
-          <p>{premises.dialog.scrollHint}</p>
-          <p>{premises.directoryNote}</p>
-        </div>
       </DialogContent>
     </Dialog>
   );

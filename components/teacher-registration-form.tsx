@@ -482,7 +482,7 @@ export function TeacherRegistrationForm() {
               </Field>
               <label data-invalid={hasInvalidField("declarationConfirmed")} className="flex items-start gap-3 rounded-lg border border-border bg-secondary/50 p-4 text-sm leading-6 has-[:focus-visible]:border-ring has-[:focus-visible]:ring-3 has-[:focus-visible]:ring-ring/20 data-[invalid=true]:border-destructive">
                 <input name="declarationConfirmed" value="yes" type="checkbox" aria-invalid={hasInvalidField("declarationConfirmed")} className="mt-1 size-4 shrink-0 accent-ocean" />
-                <span>I confirm that the information provided is correct. I understand that registration does not guarantee appointment and that Maktab.mu may conduct an interview or assessment before assigning students.</span>
+                <span>I confirm that the information provided is correct. I understand that registration does not guarantee appointment and that Maktab.mu may conduct an interview or assessment before appointing as a teacher.</span>
               </label>
               {hasInvalidField("declarationConfirmed") ? <FieldError>{errorMessages.declarationConfirmed}</FieldError> : null}
             </div>
