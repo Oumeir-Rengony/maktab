@@ -16,6 +16,13 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   Table,
   TableBody,
   TableCaption,
@@ -32,46 +39,65 @@ interface PremisesSectionProps {
 }
 
 function formatPhoneNumber(phone: string) {
-  return `+230 ${phone.slice(0, 4)} ${phone.slice(4)}`;
+  return phone
+    .split("/")
+    .map((number) => `${number.trim().slice(0, 4)} ${number.trim().slice(4)}`)
+    .join(" / ");
 }
 
-interface CallLinkProps {
+interface PhoneLinkProps {
   madrassah: Madrassah;
-  label: string;
   inverted?: boolean;
 }
 
-function CallLink({ madrassah, label, inverted = false }: CallLinkProps) {
+function PhoneLink({ madrassah, inverted = false }: PhoneLinkProps) {
+  if (!madrassah.phone) {
+    return <span className={inverted ? "text-background/55" : "text-muted-foreground"}>Not listed</span>;
+  }
+
+  const phoneNumbers = madrassah.phone.split("/").map((number) => number.trim());
+
   return (
-    <a
-      href={`tel:+230${madrassah.phone}`}
-      aria-label={`${label} ${madrassah.imam} in ${madrassah.location}`}
-      className={cn(
-        "inline-flex items-center gap-1 font-bold hover:underline",
-        inverted ? "text-lagoon" : "text-ocean",
-      )}
-    >
-      {label}
-      <span aria-hidden="true">↗</span>
-    </a>
+    <span className="inline-flex flex-wrap items-center gap-x-1.5 gap-y-1">
+      {phoneNumbers.map((phoneNumber, index) => (
+        <span key={phoneNumber} className="inline-flex items-center gap-1">
+          {index > 0 && <span aria-hidden="true">/</span>}
+          <a
+            href={`tel:+230${phoneNumber}`}
+            aria-label={`Call ${formatPhoneNumber(phoneNumber)} for ${madrassah.name} in ${madrassah.location}`}
+            className={cn(
+              "inline-flex items-center gap-1 font-bold hover:underline",
+              inverted ? "text-lagoon" : "text-ocean",
+            )}
+          >
+            {formatPhoneNumber(phoneNumber)}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </span>
+      ))}
+    </span>
   );
 }
 
 function DirectoryDialog({ premises }: PremisesSectionProps) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("all");
   const deferredSearchTerm = useDeferredValue(searchTerm);
   const normalizedSearch = deferredSearchTerm.trim().toLocaleLowerCase();
+  const locations = useMemo(
+    () => Array.from(new Set(premises.madrassahs.map((madrassah) => madrassah.location))).sort(),
+    [premises.madrassahs],
+  );
 
   const filteredMadrassahs = useMemo(() => {
-    if (!normalizedSearch) {
-      return premises.madrassahs;
-    }
-
     return premises.madrassahs.filter((madrassah) => {
-      const searchableText = `${madrassah.imam} ${madrassah.location}`.toLocaleLowerCase();
-      return searchableText.includes(normalizedSearch);
+      const searchableText = `${madrassah.name} ${madrassah.personInCharge} ${madrassah.address} ${madrassah.location}`.toLocaleLowerCase();
+      const matchesSearch = !normalizedSearch || searchableText.includes(normalizedSearch);
+      const matchesLocation = selectedLocation === "all" || madrassah.location === selectedLocation;
+
+      return matchesSearch && matchesLocation;
     });
-  }, [normalizedSearch, premises.madrassahs]);
+  }, [normalizedSearch, premises.madrassahs, selectedLocation]);
 
   const resultLabel =
     filteredMadrassahs.length === 1
@@ -79,7 +105,14 @@ function DirectoryDialog({ premises }: PremisesSectionProps) {
       : premises.dialog.pluralResult;
 
   return (
-    <Dialog onOpenChange={(open) => !open && setSearchTerm("")}>
+    <Dialog
+      onOpenChange={(open) => {
+        if (!open) {
+          setSearchTerm("");
+          setSelectedLocation("all");
+        }
+      }}
+    >
       <DialogTrigger render={<Button variant="lagoon" size="lg" className="sm:min-w-64" />}>
         {premises.viewAllLabel}
         <ChevronRightIcon data-icon="inline-end" />
@@ -93,7 +126,7 @@ function DirectoryDialog({ premises }: PremisesSectionProps) {
           <DialogDescription className="sr-only">{premises.dialog.description}</DialogDescription>
         </DialogHeader>
 
-        <div className="grid items-end gap-3 border-b px-5 pb-5 sm:grid-cols-[1fr_auto] sm:gap-6 sm:px-8">
+        <div className="grid items-end gap-3 border-b px-5 pb-5 sm:grid-cols-[1fr_14rem_auto] sm:gap-6 sm:px-8">
           <Field>
             <FieldLabel htmlFor="directory-search">{premises.dialog.searchLabel}</FieldLabel>
             <Input
@@ -104,16 +137,31 @@ function DirectoryDialog({ premises }: PremisesSectionProps) {
               placeholder={premises.dialog.searchPlaceholder}
             />
           </Field>
+          <Field>
+            <FieldLabel htmlFor="directory-location">{premises.dialog.locationFilterLabel}</FieldLabel>
+            <Select value={selectedLocation} onValueChange={(value) => setSelectedLocation(value ?? "all")}>
+              <SelectTrigger id="directory-location" className="w-full">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent alignItemWithTrigger={false}>
+                <SelectItem value="all">{premises.dialog.allLocationsLabel}</SelectItem>
+                {locations.map((location) => (
+                  <SelectItem key={location} value={location}>{location}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </Field>
           <p className="pb-4 text-sm font-bold text-muted-foreground" role="status" aria-live="polite">
             {filteredMadrassahs.length} {resultLabel}
           </p>
         </div>
 
-        <div className="hidden grid-cols-[1.25fr_0.9fr_0.8fr_4rem] gap-4 bg-secondary px-8 py-3.5 text-xs font-bold tracking-[0.12em] text-muted-foreground uppercase sm:grid">
-          <span>{premises.tableHeaders.imam}</span>
+        <div className="hidden grid-cols-[1.05fr_0.7fr_1.1fr_0.95fr_0.8fr] gap-4 bg-secondary px-8 py-3.5 text-xs font-bold tracking-[0.12em] text-muted-foreground uppercase lg:grid">
+          <span>{premises.tableHeaders.name}</span>
           <span>{premises.tableHeaders.location}</span>
+          <span>{premises.tableHeaders.address}</span>
+          <span>{premises.tableHeaders.personInCharge}</span>
           <span>{premises.tableHeaders.contact}</span>
-          <span className="sr-only">{premises.tableHeaders.action}</span>
         </div>
 
         <ScrollArea className="min-h-0">
@@ -121,15 +169,14 @@ function DirectoryDialog({ premises }: PremisesSectionProps) {
             <ul className="flex flex-col">
               {filteredMadrassahs.map((madrassah) => (
                 <li
-                  key={`${madrassah.imam}-${madrassah.location}`}
-                  className="content-auto grid min-h-16 grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b px-5 py-4 text-sm sm:grid-cols-[1.25fr_0.9fr_0.8fr_4rem] sm:items-center sm:gap-4 sm:px-8"
+                  key={`${madrassah.name}-${madrassah.location}`}
+                  className="content-auto grid min-h-16 grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b px-5 py-4 text-sm lg:grid-cols-[1.05fr_0.7fr_1.1fr_0.95fr_0.8fr] lg:items-center lg:gap-4 lg:px-8"
                 >
-                  <strong>{madrassah.imam}</strong>
-                  <span className="text-muted-foreground sm:col-auto">{madrassah.location}</span>
-                  <span className="text-muted-foreground sm:col-auto">{formatPhoneNumber(madrassah.phone)}</span>
-                  <span className="col-start-2 row-span-3 row-start-1 self-center text-right sm:col-auto sm:row-auto">
-                    <CallLink madrassah={madrassah} label={premises.callLabel} />
-                  </span>
+                  <strong>{madrassah.name}</strong>
+                  <span className="text-muted-foreground lg:col-auto">{madrassah.location}</span>
+                  <span className="text-muted-foreground lg:col-auto">{madrassah.address || "Not listed"}</span>
+                  <span className="text-muted-foreground lg:col-auto">{madrassah.personInCharge || "Not listed"}</span>
+                  <PhoneLink madrassah={madrassah} />
                 </li>
               ))}
             </ul>
@@ -165,21 +212,21 @@ export function PremisesSection({ premises }: PremisesSectionProps) {
           <TableCaption className="sr-only">{premises.title}</TableCaption>
           <TableHeader>
             <TableRow className="border-background/25 hover:bg-transparent">
-              <TableHead className="text-background/60">{premises.tableHeaders.imam}</TableHead>
+              <TableHead className="text-background/60">{premises.tableHeaders.name}</TableHead>
               <TableHead className="text-background/60">{premises.tableHeaders.location}</TableHead>
+              <TableHead className="text-background/60">{premises.tableHeaders.address}</TableHead>
+              <TableHead className="text-background/60">{premises.tableHeaders.personInCharge}</TableHead>
               <TableHead className="text-background/60">{premises.tableHeaders.contact}</TableHead>
-              <TableHead className="text-right text-background/60">{premises.tableHeaders.action}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {featuredMadrassahs.map((madrassah) => (
-              <TableRow key={`${madrassah.imam}-${madrassah.location}`} className="border-background/25 hover:bg-background/5">
-                <TableCell className="py-5 font-bold text-background">{madrassah.imam}</TableCell>
+              <TableRow key={`${madrassah.name}-${madrassah.location}`} className="border-background/25 hover:bg-background/5">
+                <TableCell className="py-5 font-bold text-background">{madrassah.name}</TableCell>
                 <TableCell className="text-background/75">{madrassah.location}</TableCell>
-                <TableCell className="text-background/75">{formatPhoneNumber(madrassah.phone)}</TableCell>
-                <TableCell className="text-right">
-                  <CallLink madrassah={madrassah} label={premises.callLabel} inverted />
-                </TableCell>
+                <TableCell className="text-background/75">{madrassah.address || "Not listed"}</TableCell>
+                <TableCell className="text-background/75">{madrassah.personInCharge || "Not listed"}</TableCell>
+                <TableCell><PhoneLink madrassah={madrassah} inverted /></TableCell>
               </TableRow>
             ))}
           </TableBody>

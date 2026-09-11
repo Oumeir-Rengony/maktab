@@ -52,9 +52,11 @@ export interface MotivationData {
 }
 
 export interface Madrassah {
-  imam: string;
+  name: string;
   location: string;
-  phone: string;
+  address: string;
+  personInCharge: string;
+  phone?: string;
 }
 
 export interface PremisesData {
@@ -62,12 +64,12 @@ export interface PremisesData {
   title: string;
   description: string;
   tableHeaders: {
-    imam: string;
+    name: string;
     location: string;
+    address: string;
+    personInCharge: string;
     contact: string;
-    action: string;
   };
-  callLabel: string;
   moreTitle: string;
   moreDescription: string;
   viewAllLabel: string;
@@ -78,6 +80,8 @@ export interface PremisesData {
     description: string;
     searchLabel: string;
     searchPlaceholder: string;
+    locationFilterLabel: string;
+    allLocationsLabel: string;
     closeLabel: string;
     emptyMessage: string;
     scrollHint: string;
