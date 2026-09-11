@@ -1,12 +1,11 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
 
-import { LearningHistoryStep } from "@/components/registration/learning-history-step";
-import { RegistrationProgress } from "@/components/registration/registration-progress";
-import { StudentDetailsStep } from "@/components/registration/student-details-step";
-import { Button } from "@/components/ui/button";
+import { LearningHistoryStep } from "@/components/student-registration/learning-history-step";
+import { RegistrationProgress } from "@/components/student-registration/registration-progress";
+import { StudentDetailsStep } from "@/components/student-registration/student-details-step";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { FieldError } from "@/components/ui/field";
 import {
@@ -21,7 +20,7 @@ import type {
   RegistrationFormState,
 } from "@/lib/types";
 
-interface RegistrationFormProps {
+interface StudentRegistrationFormProps {
   data: RegistrationData;
 }
 
@@ -52,7 +51,7 @@ const studentDetailFields: RegistrationFieldName[] = [
   "residence",
 ];
 
-export function RegistrationForm({ data }: RegistrationFormProps) {
+export function StudentRegistrationForm({ data }: StudentRegistrationFormProps) {
   const [currentStep, setCurrentStep] = useState(1);
   const [formState, setFormState] = useState<RegistrationFormState>(initialFormState);
   const [invalidFields, setInvalidFields] = useState<Set<RegistrationFieldName>>(new Set());

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import siteData from "@/data/data.json";
-import { addRegistration } from "@/lib/google-sheets";
+import { addStudentRegistration } from "@/lib/google-sheets";
 import {
   getInvalidRegistrationFields,
   normalizeRegistration,
@@ -69,7 +69,7 @@ export async function POST(request: Request) {
   const normalizedRegistration = normalizeRegistration(registration);
 
   try {
-    await addRegistration({
+    await addStudentRegistration({
       course: courseLabel,
       studentName: normalizedRegistration.studentName,
       studentAge: Number(normalizedRegistration.studentAge),

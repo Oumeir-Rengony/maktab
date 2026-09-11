@@ -1,6 +1,6 @@
 import { MessageCircleIcon } from "lucide-react";
 
-import { RegistrationForm } from "@/components/registration/registration-form";
+import { StudentRegistrationForm } from "@/components/student-registration/student-registration-form";
 import type { RegistrationData } from "@/lib/types";
 
 interface RegistrationSectionProps {
@@ -30,7 +30,7 @@ export function RegistrationSection({ registration }: RegistrationSectionProps) 
             </p>
           </div>
         </div>
-        <RegistrationForm data={registration} />
+        <StudentRegistrationForm data={registration} />
       </div>
     </section>
   );

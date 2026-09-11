@@ -181,6 +181,64 @@ export type RegistrationApiResponse =
       invalidFields?: RegistrationFieldName[];
     };
 
+export interface TeacherRegistrationFormState {
+  fullName: string;
+  gender: string;
+  age: string;
+  address: string;
+  whatsappNumber: string;
+  email: string;
+  islamicStudiesQualifications: string;
+  quranTajwidQualifications: string;
+  currentlyTeaching: string;
+  currentTeachingLocation: string;
+  teachingExperience: string;
+  ageGroups: string[];
+  subjects: string[];
+  otherSubjects: string;
+  languages: string[];
+  otherLanguage: string;
+  availableDays: string[];
+  preferredTeachingTimes: string;
+  classesPerWeek: string;
+  hasInternetAndDevice: string;
+  comfortableOnline: string;
+  teachingMotivation: string;
+  additionalInformation: string;
+  declarationConfirmed: boolean;
+}
+
+export type TeacherRegistrationFieldName =
+  | "fullName"
+  | "gender"
+  | "age"
+  | "address"
+  | "whatsappNumber"
+  | "email"
+  | "islamicStudiesQualifications"
+  | "currentlyTeaching"
+  | "currentTeachingLocation"
+  | "teachingExperience"
+  | "ageGroups"
+  | "subjects"
+  | "languages"
+  | "availableDays"
+  | "classesPerWeek"
+  | "hasInternetAndDevice"
+  | "comfortableOnline"
+  | "teachingMotivation"
+  | "declarationConfirmed";
+
+export type TeacherRegistrationApiResponse =
+  | {
+      success: true;
+    }
+  | {
+      success: false;
+      error: "INVALID_REGISTRATION" | "SUBMISSION_FAILED";
+      invalidFields?: TeacherRegistrationFieldName[];
+    };
+
 export interface FooterData {
   tagline: string;
   navigation: NavigationItem[];
