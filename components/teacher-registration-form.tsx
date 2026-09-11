@@ -202,6 +202,24 @@ export function TeacherRegistrationForm() {
     return invalidFields.has(fieldName);
   }
 
+  function handleFormChange(event: FormEvent<HTMLFormElement>) {
+    const formData = new FormData(event.currentTarget);
+    const fieldsThatAreStillInvalid = getInvalidFields(formData);
+
+    setInvalidFields((currentInvalidFields) => {
+      const nextInvalidFields = new Set<TeacherFieldName>();
+
+      for (const fieldName of currentInvalidFields) {
+        if (fieldsThatAreStillInvalid.has(fieldName)) {
+          nextInvalidFields.add(fieldName);
+        }
+      }
+
+      return nextInvalidFields;
+    });
+    setSubmissionError("");
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -312,7 +330,13 @@ export function TeacherRegistrationForm() {
             </p>
           </div>
         ) : (
-        <form className="space-y-10" onSubmit={handleSubmit} aria-busy={isSubmitting} noValidate>
+        <form
+          className="space-y-10"
+          onChange={handleFormChange}
+          onSubmit={handleSubmit}
+          aria-busy={isSubmitting}
+          noValidate
+        >
           {invalidFields.size > 0 || submissionError ? (
             <FieldError className="border-l-4 border-destructive bg-destructive/10 p-3">
               {submissionError || "Please correct the highlighted fields before registering."}
