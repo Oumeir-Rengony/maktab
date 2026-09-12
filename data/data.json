@@ -19,9 +19,9 @@
   },
   "header": {
     "navigation": [
-      { "label": "Why Maktab.mu", "href": "#why" },
-      { "label": "On premises", "href": "#premises" },
-      { "label": "Online", "href": "#registration" },
+      { "label": "Why Maktab.mu", "href": "/#why" },
+      { "label": "On premises", "href": "/#premises" },
+      { "label": "Online", "href": "/#registration" },
       { "label": "About us", "href": "/about" }
     ],
     "cta": { "label": "Register now", "href": "#registration" },
@@ -253,9 +253,9 @@
     "tagline": "Faith. Knowledge. Character.\nA welcoming place to learn and grow.",
     "navigationLabel": "Footer navigation",
     "navigation": [
-      { "label": "Why Maktab.mu", "href": "#why" },
-      { "label": "On premises", "href": "#premises" },
-      { "label": "Online registration", "href": "#registration" }
+      { "label": "Why Maktab.mu", "href": "/#why" },
+      { "label": "On premises", "href": "/#premises" },
+      { "label": "Online registration", "href": "/#registration" }
     ],
     "copyright": "Maktab.mu",
     "location": "Made with care in Mauritius 🇲🇺"
